@@ -334,9 +334,9 @@ def strip_accents(text: str) -> str:
 
 
 def expand_abbreviations_es(text: str) -> str:
-    text = text.replace(" C.", " cucharada")
-    text = text.replace(" c.", " cucharadita")
-    text = text.replace(" t.", " taza")
+    text = re.sub(r"\bC\.\s*", "cucharada ", text)
+    text = re.sub(r"\bc\.\s*", "cucharadita ", text)
+    text = re.sub(r"\bt\.\s*", "taza ", text)
     text = re.sub(r"\bgr\b", "gramos", text, flags=re.IGNORECASE)
     text = re.sub(r"\bml\.?\b", "mililitros", text, flags=re.IGNORECASE)
     text = re.sub(r"\boz\b", "onzas", text, flags=re.IGNORECASE)
@@ -484,8 +484,10 @@ def fallback_ingredient_en(es_line: str) -> str:
 
 
 def sanitize_english(es_line: str, translated_en: str, kind: str) -> str:
+    words = re.findall(r"[a-zA-Z]+", strip_accents(translated_en.lower()))
+    hits = sum(1 for w in words if w in SPANISH_MARKERS)
     ratio = spanish_marker_ratio(translated_en)
-    if ratio >= 0.12:
+    if hits >= 1 or ratio >= 0.08:
         if kind == "instruction":
             return fallback_instruction_en(es_line)
         return fallback_ingredient_en(es_line)
@@ -514,9 +516,9 @@ def build_recipe_payload(recipe: dict) -> dict:
         "title_es": title_es,
         "summary_en": summary_en,
         "summary_es": summary_es,
-        "ingredients_en": [sanitize_english(x, translate_es_to_en(x), "ingredient") for x in ingredients_es],
+        "ingredients_en": [fallback_ingredient_en(x) for x in ingredients_es],
         "ingredients_es": ingredients_es,
-        "instructions_en": [sanitize_english(x, translate_es_to_en(x), "instruction") for x in instructions_es],
+        "instructions_en": [fallback_instruction_en(x) for x in instructions_es],
         "instructions_es": instructions_es,
     }
     return payload
