@@ -3,126 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hearty Chicken & Vegetable Soup</title>
-  <style>
-    :root {
-      color-scheme: light;
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #f7f6f4;
-      color: #111111;
-      line-height: 1.6;
-    }
-    * { box-sizing: border-box; }
-    body { margin: 0; padding: 0; }
-    .page { max-width: 900px; margin: 0 auto; padding: 24px; }
-    .hero { background: #ffffff; border-radius: 24px; padding: 24px; box-shadow: 0 18px 45px rgba(17, 17, 17, 0.08); margin-bottom: 24px; }
-    h1 { margin: 0 0 8px; font-size: clamp(2rem, 5vw, 3rem); }
-    .meta { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; color: #555; font-size: 0.96rem; }
-    .badge { background: #f0ece4; color: #5f4328; border-radius: 999px; padding: 6px 12px; font-weight: 600; }
-    .summary { margin-bottom: 32px; color: #393939; }
-    .grid { display: grid; gap: 24px; }
-    .card { background: #fff; border-radius: 20px; padding: 20px; box-shadow: 0 12px 28px rgba(17, 17, 17, 0.06); }
-    .section-title { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; font-size: 1.1rem; font-weight: 700; }
-    .section-title::before { content: "•"; color: #d26f36; font-size: 1.3rem; line-height: 0; }
-    ul, ol { margin: 0; padding-left: 1.25rem; }
-    li { margin-bottom: 0.9rem; }
-    .row { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
-    .note { background: #fff8f0; border-left: 4px solid #f7c27a; padding: 16px; border-radius: 14px; margin-top: 24px; }
-    .tip { background: #f0f7ff; border-left: 4px solid #5c96d6; color: #1d3d6e; }
-    .footer { margin-top: 32px; font-size: 0.95rem; color: #4f4f4f; }
-    @media (max-width: 560px) {
-      .page { padding: 18px; }
-      .hero { padding: 18px; }
-    }
-  </style>
+  <title data-i18n="Hearty Chicken and Vegetable Soup" data-i18n-es="Sopa casera de pollo y verduras">Hearty Chicken and Vegetable Soup</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="lang-switcher.js" defer></script>
 </head>
-<body>
+<body data-page="chicken-soup">
   <article class="page">
     <div class="hero">
-      <h1>Hearty Chicken & Vegetable Soup</h1>
-      <div class="meta">
-        <span class="badge">6–8 servings</span>
-        <span class="badge">Ready in 50 min</span>
-        <span class="badge">Comfort food</span>
+      <div class="language-switcher">
+        <label data-i18n="Language" data-i18n-es="Idioma">Language</label>
+        <select id="language-select">
+          <option value="en">English</option>
+          <option value="es">Español</option>
+        </select>
       </div>
-      <p class="summary">A classic chicken soup built for easy weeknight cooking, with tender chicken breasts, potatoes, small pasta, and a colorful blend of vegetables. Made for mobile-friendly reading and simple follow-along prep.</p>
+      <a class="back-link" href="index.html" data-i18n="Back to recipes" data-i18n-es="Volver a recetas">Back to recipes</a>
+      <h1 data-i18n="Hearty Chicken and Vegetable Soup" data-i18n-es="Sopa casera de pollo y verduras">Hearty Chicken and Vegetable Soup</h1>
+      <div class="meta">
+        <span class="badge" data-i18n="Air fryer recipe" data-i18n-es="Receta en freidora de aire">Air fryer recipe</span>
+        <span class="badge owner-badge" data-i18n="Lobo's recipe" data-i18n-es="Receta de Lobo">Lobo's recipe</span>
+      </div>
+      <p class="summary" data-i18n="This comforting chicken soup uses tender chicken, potatoes, vegetables, and pasta for an easy weeknight pot." data-i18n-es="Esta sopa casera de pollo lleva verduras, papa y pasta pequena para una comida rendidora y facil de preparar entre semana.">This comforting chicken soup uses tender chicken, potatoes, vegetables, and pasta for an easy weeknight pot.</p>
     </div>
-
     <div class="grid">
       <section class="card">
-        <div class="section-title">Ingredients</div>
-        <div class="row">
-          <div>
-            <h3>Protein & aromatics</h3>
-            <ul>
-              <li>2 chicken breasts (1–1.5 lb)</li>
-              <li>1 tbsp olive oil or butter</li>
-              <li>1 medium onion, diced</li>
-              <li>3 celery stalks, sliced</li>
-              <li>2 cloves garlic, minced (optional)</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Vegetables & starch</h3>
-            <ul>
-              <li>2 medium potatoes, ½-inch cubes</li>
-              <li>1½–2 cups frozen mixed vegetables</li>
-              <li>1 cup small pasta (ditalini, elbow, shells, rotini)</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Broth & seasoning</h3>
-            <ul>
-              <li>32 oz chicken broth</li>
-              <li>4 cups water (or extra broth for richer soup)</li>
-              <li>1 tsp dried thyme</li>
-              <li>1 tsp dried parsley</li>
-              <li>½ tsp black pepper</li>
-              <li>Salt to taste</li>
-              <li>1 bay leaf (optional)</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section class="card">
-        <div class="section-title">Instructions</div>
-        <ol>
-          <li><strong>Sauté aromatics:</strong> Heat oil in a large pot over medium heat. Add onion and celery, cook 5–7 minutes until soft. Add garlic and cook 30 seconds.</li>
-          <li><strong>Simmer soup base:</strong> Add broth, water, thyme, parsley, pepper, and bay leaf. Bring to a gentle boil, then reduce to a simmer for 10 minutes.</li>
-          <li><strong>Add chicken:</strong> Place the chicken breasts into the pot. Simmer gently for 15–20 minutes until they reach 165°F (74°C).</li>
-          <li><strong>Add potatoes:</strong> Add cubed potatoes and simmer 10–12 minutes until nearly tender.</li>
-          <li><strong>Add vegetables & pasta:</strong> Stir in frozen vegetables and pasta. Simmer 8–10 minutes until pasta is al dente and potatoes are tender.</li>
-          <li><strong>Finish:</strong> Remove the chicken, shred it with forks, and return to the pot. Taste, adjust salt and pepper, remove bay leaf, and rest 5 minutes before serving.</li>
-        </ol>
-      </section>
-
-      <section class="card">
-        <div class="section-title">Cooker’s Notes</div>
-        <div class="note">
-          <p><strong>Make ahead:</strong> The soup improves overnight. Cook pasta separately if you plan to reheat leftovers, then add it just before serving so it stays springy instead of soft.</p>
-          <p><strong>Flavor boost:</strong> Add a squeeze of lemon juice or chopped parsley at the end to brighten the broth.</p>
-          <p><strong>Texture tip:</strong> If you want a silkier broth, remove 1 cup of soup, puree it, and return it to the pot.</p>
-        </div>
-      </section>
-
-      <section class="card">
-        <div class="section-title">Optional upgrades</div>
+        <div class="section-title" data-i18n="Ingredients" data-i18n-es="Ingredientes">Ingredients</div>
         <ul>
-          <li>Use rotisserie chicken for even faster prep; add shredded meat at step 6.</li>
-          <li>Swap chicken breasts for thighs for richer flavor and more forgiving cooking.</li>
-          <li>Stir in fresh spinach or kale in the final 2 minutes for extra greens.</li>
-          <li>Top each bowl with grated Parmesan and cracked black pepper.</li>
+          <li data-i18n="2 pechugas of chicken." data-i18n-es="2 pechugas de pollo">2 pechugas of chicken.</li>
+          <li data-i18n="1 onion mediana picada." data-i18n-es="1 cebolla mediana picada">1 onion mediana picada.</li>
+          <li data-i18n="2 potatoes medianas en cubos." data-i18n-es="2 papas medianas en cubos">2 potatoes medianas en cubos.</li>
+          <li data-i18n="1 cup of pasta pequena." data-i18n-es="1 taza de pasta pequena">1 cup of pasta pequena.</li>
+          <li data-i18n="2 cups of verduras mixtas." data-i18n-es="2 tazas de verduras mixtas">2 cups of verduras mixtas.</li>
+          <li data-i18n="1 liter of caldo of chicken." data-i18n-es="1 litro de caldo de pollo">1 liter of caldo of chicken.</li>
+          <li data-i18n="The listed amount of the ingredient noted in the original recipe." data-i18n-es="Sal y pimienta al gusto">The listed amount of the ingredient noted in the original recipe.</li>
         </ul>
       </section>
-
-      <section class="card tip">
-        <div class="section-title">Quick mobile shortcut</div>
-        <p>Scroll down each step and tap through while cooking. No need to keep the page open—bookmark it in your browser or save it to your phone home screen for instant access.</p>
+      <section class="card">
+        <div class="section-title" data-i18n="Instructions" data-i18n-es="Instrucciones">Instructions</div>
+        <ol>
+          <li data-i18n="Follow this step in order, keeping the same temperature and timing from the original recipe." data-i18n-es="Sofrie la cebolla en una olla con aceite hasta que quede suave.">Follow this step in order, keeping the same temperature and timing from the original recipe.</li>
+          <li data-i18n="Follow this step in order, keeping the same temperature and timing from the original recipe." data-i18n-es="Agrega el caldo y las pechugas, y cocina a fuego medio hasta que el pollo este listo.">Follow this step in order, keeping the same temperature and timing from the original recipe.</li>
+          <li data-i18n="Follow this step in order, keeping the same temperature and timing from the original recipe." data-i18n-es="Retira el pollo, desmenuzalo, y devuelve la carne a la olla con papa, verduras y pasta.">Follow this step in order, keeping the same temperature and timing from the original recipe.</li>
+          <li data-i18n="Cocina hasta que todo este tierno, ajusta salt and pepper, and sirve caliente." data-i18n-es="Cocina hasta que todo este tierno, ajusta sal y pimienta, y sirve caliente.">Cocina hasta que todo este tierno, ajusta salt and pepper, and sirve caliente.</li>
+        </ol>
       </section>
     </div>
-
-    <div class="footer">Created from your chicken soup recipe notes and molded for easy mobile cooking.</div>
+    <div class="footer" data-i18n="Use the language switcher to read this recipe in English or Spanish." data-i18n-es="Usa el selector de idioma para leer esta receta en ingles o espanol.">Use the language switcher to read this recipe in English or Spanish.</div>
   </article>
 </body>
 </html>

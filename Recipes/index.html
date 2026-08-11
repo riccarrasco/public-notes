@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="Recipes" data-i18n-es="Recetas">Recipes</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="lang-switcher.js" defer></script>
+  <script src="search.js" defer></script>
+</head>
+<body data-page="recipes-index">
+  <article class="page">
+    <div class="hero category-tuti">
+      <div class="language-switcher">
+        <label data-i18n="Language" data-i18n-es="Idioma">Language</label>
+        <select id="language-select">
+          <option value="en">English</option>
+          <option value="es">Español</option>
+        </select>
+      </div>
+      <h1 data-i18n="Recipes" data-i18n-es="Recetas">Recipes</h1>
+      <div class="meta">
+        <span class="badge" data-i18n="Bilingual collection" data-i18n-es="Coleccion bilingue">Bilingual collection</span>
+        <span class="badge" data-i18n="Tuti and Lobo recipes" data-i18n-es="Recetas de Tuti y Lobo">Tuti and Lobo recipes</span>
+      </div>
+      <p class="summary" data-i18n="Every recipe includes cleaned ingredients, clear instructions, owner labels, and concise summaries." data-i18n-es="Cada receta incluye ingredientes ordenados, instrucciones claras, etiqueta de autor y resumen breve.">Every recipe includes cleaned ingredients, clear instructions, owner labels, and concise summaries.</p>
+      <div class="search-bar">
+        <input id="recipe-search" type="search" data-i18n-placeholder="Search recipes by title, category, owner, or ingredient" data-i18n-placeholder-es="Buscar por titulo, categoria, autor o ingrediente" placeholder="Search recipes by title, category, owner, or ingredient" />
+      </div>
+      <div id="no-results" class="no-results" data-i18n="No recipes match that search." data-i18n-es="No hay recetas que coincidan con esa busqueda." style="display:none;">No recipes match that search.</div>
+    </div>
+    <section class="category-section category-tuti">
+      <div class="category-header">
+        <h2 data-i18n="Breakfast" data-i18n-es="Desayunos">Breakfast</h2>
+        <p data-i18n="Browse Breakfast recipes." data-i18n-es="Explora recetas de Desayunos.">Browse Breakfast recipes.</p>
+      </div>
+      <div class="recipe-grid grid-2">
+        <a class="recipe-card recipe-card-tuti" href="tostadas-francesas-dulces.html" data-title="Sweet French Toast" data-description="Sweet French Toast is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Breakfast" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Sweet French Toast" data-i18n-es="Tostadas Francesas Dulces">Sweet French Toast</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Breakfast" data-i18n-es="Desayunos">Breakfast</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Sweet French Toast is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Tostadas Francesas Dulces es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Sweet French Toast is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="omelette-tortilla-huevo.html" data-title="Air Fryer Omelet" data-description="Air Fryer Omelet is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Breakfast" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Air Fryer Omelet" data-i18n-es="Omelette O Tortilla De Huevo">Air Fryer Omelet</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Breakfast" data-i18n-es="Desayunos">Breakfast</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Air Fryer Omelet is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Omelette O Tortilla De Huevo es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Air Fryer Omelet is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="huevos-al-plato.html" data-title="Eggs in a Basket" data-description="Eggs in a Basket is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Breakfast" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Eggs in a Basket" data-i18n-es="Huevos Al Plato">Eggs in a Basket</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Breakfast" data-i18n-es="Desayunos">Breakfast</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Eggs in a Basket is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Huevos Al Plato es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Eggs in a Basket is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="tostadas-francesas-en-cupcakes.html" data-title="French Toast Cupcakes" data-description="French Toast Cupcakes is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Breakfast" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="French Toast Cupcakes" data-i18n-es="Tostadas Francesas En Cupcakes Con Frambuesas">French Toast Cupcakes</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Breakfast" data-i18n-es="Desayunos">Breakfast</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="French Toast Cupcakes is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Tostadas Francesas En Cupcakes Con Frambuesas es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">French Toast Cupcakes is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="granola.html" data-title="Granola" data-description="Granola is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Breakfast" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Granola" data-i18n-es="Granola">Granola</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Breakfast" data-i18n-es="Desayunos">Breakfast</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Granola is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Granola es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Granola is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="platano-caramelizado.html" data-title="Caramelized Banana" data-description="Caramelized Banana is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Breakfast" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Caramelized Banana" data-i18n-es="Plátano Caramelizado">Caramelized Banana</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Breakfast" data-i18n-es="Desayunos">Breakfast</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Caramelized Banana is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Plátano Caramelizado es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Caramelized Banana is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="tostadas-con-natilla.html" data-title="Custard Toast" data-description="Custard Toast is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Breakfast" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Custard Toast" data-i18n-es="Tostadas Con Natilla">Custard Toast</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Breakfast" data-i18n-es="Desayunos">Breakfast</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Custard Toast is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Tostadas Con Natilla es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Custard Toast is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+      </div>
+    </section>
+    <section class="category-section category-tuti">
+      <div class="category-header">
+        <h2 data-i18n="Appetizers and Snacks" data-i18n-es="Entradas y piqueos">Appetizers and Snacks</h2>
+        <p data-i18n="Browse Appetizers and Snacks recipes." data-i18n-es="Explora recetas de Entradas y piqueos.">Browse Appetizers and Snacks recipes.</p>
+      </div>
+      <div class="recipe-grid grid-2">
+        <a class="recipe-card recipe-card-tuti" href="tostadas-francesas-saladas.html" data-title="Savory French Toast" data-description="Savory French Toast is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Appetizers and Snacks" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Savory French Toast" data-i18n-es="Tostadas Francesas Saladas">Savory French Toast</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Appetizers and Snacks" data-i18n-es="Entradas y piqueos">Appetizers and Snacks</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Savory French Toast is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Tostadas Francesas Saladas es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Savory French Toast is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="paninis.html" data-title="Paninis" data-description="Paninis is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Appetizers and Snacks" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Paninis" data-i18n-es="Paninis">Paninis</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Appetizers and Snacks" data-i18n-es="Entradas y piqueos">Appetizers and Snacks</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Paninis is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Paninis es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Paninis is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="bolitas-de-quinua.html" data-title="Quinoa Balls" data-description="Quinoa Balls is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Appetizers and Snacks" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Quinoa Balls" data-i18n-es="Bolitas De Quinua">Quinoa Balls</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Appetizers and Snacks" data-i18n-es="Entradas y piqueos">Appetizers and Snacks</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Quinoa Balls is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Bolitas De Quinua es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Quinoa Balls is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="napolitanas.html" data-title="Napolitanas" data-description="Napolitanas is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Appetizers and Snacks" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Napolitanas" data-i18n-es="Napolitanas">Napolitanas</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Appetizers and Snacks" data-i18n-es="Entradas y piqueos">Appetizers and Snacks</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Napolitanas is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Napolitanas es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Napolitanas is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="empanadas.html" data-title="Empanadas" data-description="Empanadas is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Appetizers and Snacks" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Empanadas" data-i18n-es="Empanadas">Empanadas</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Appetizers and Snacks" data-i18n-es="Entradas y piqueos">Appetizers and Snacks</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Empanadas is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Empanadas es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Empanadas is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="empanadas-gallegas.html" data-title="Galician Empanadas" data-description="Galician Empanadas is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Appetizers and Snacks" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Galician Empanadas" data-i18n-es="Empanadas Gallegas">Galician Empanadas</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Appetizers and Snacks" data-i18n-es="Entradas y piqueos">Appetizers and Snacks</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Galician Empanadas is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Empanadas Gallegas es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Galician Empanadas is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="falafel.html" data-title="Falafel" data-description="Falafel is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Appetizers and Snacks" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Falafel" data-i18n-es="Falafel">Falafel</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Appetizers and Snacks" data-i18n-es="Entradas y piqueos">Appetizers and Snacks</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Falafel is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Falafel es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Falafel is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="quequitos-de-garbanzo.html" data-title="Chickpea Muffins" data-description="Chickpea Muffins is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Appetizers and Snacks" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Chickpea Muffins" data-i18n-es="Quequitos De Garbanzo">Chickpea Muffins</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Appetizers and Snacks" data-i18n-es="Entradas y piqueos">Appetizers and Snacks</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Chickpea Muffins is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Quequitos De Garbanzo es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Chickpea Muffins is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="croquetas-de-atun.html" data-title="Tuna Croquettes" data-description="Tuna Croquettes is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Appetizers and Snacks" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Tuna Croquettes" data-i18n-es="Croquetas De Atún">Tuna Croquettes</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Appetizers and Snacks" data-i18n-es="Entradas y piqueos">Appetizers and Snacks</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Tuna Croquettes is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Croquetas De Atún es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Tuna Croquettes is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="croquetas-con-tocino-o-jamon.html" data-title="Bacon or Ham Croquettes" data-description="Bacon or Ham Croquettes is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Appetizers and Snacks" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Bacon or Ham Croquettes" data-i18n-es="Croquetas Con Tocino O Jamón">Bacon or Ham Croquettes</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Appetizers and Snacks" data-i18n-es="Entradas y piqueos">Appetizers and Snacks</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Bacon or Ham Croquettes is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Croquetas Con Tocino O Jamón es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Bacon or Ham Croquettes is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="croquetas-de-queso.html" data-title="Cheese Croquettes" data-description="Cheese Croquettes is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Appetizers and Snacks" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Cheese Croquettes" data-i18n-es="Croquetas De Queso">Cheese Croquettes</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Appetizers and Snacks" data-i18n-es="Entradas y piqueos">Appetizers and Snacks</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Cheese Croquettes is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Croquetas De Queso es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Cheese Croquettes is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="papa-rellena.html" data-title="Stuffed Potato" data-description="Stuffed Potato is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Appetizers and Snacks" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Stuffed Potato" data-i18n-es="Papa Rellena">Stuffed Potato</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Appetizers and Snacks" data-i18n-es="Entradas y piqueos">Appetizers and Snacks</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Stuffed Potato is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Papa Rellena es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Stuffed Potato is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="san-jacobos.html" data-title="San Jacobos" data-description="San Jacobos is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Appetizers and Snacks" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="San Jacobos" data-i18n-es="San Jacobos">San Jacobos</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Appetizers and Snacks" data-i18n-es="Entradas y piqueos">Appetizers and Snacks</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="San Jacobos is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="San Jacobos es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">San Jacobos is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="esparragos-con-jamon.html" data-title="Asparagus with Ham" data-description="Asparagus with Ham is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Appetizers and Snacks" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Asparagus with Ham" data-i18n-es="Espárragos Con Jamón">Asparagus with Ham</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Appetizers and Snacks" data-i18n-es="Entradas y piqueos">Appetizers and Snacks</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Asparagus with Ham is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Espárragos Con Jamón es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Asparagus with Ham is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="chips-de-kale.html" data-title="Kale Chips" data-description="Kale Chips is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Appetizers and Snacks" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Kale Chips" data-i18n-es="Chips De Kale">Kale Chips</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Appetizers and Snacks" data-i18n-es="Entradas y piqueos">Appetizers and Snacks</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Kale Chips is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Chips De Kale es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Kale Chips is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="pan-casero.html" data-title="Homemade Bread" data-description="Homemade Bread is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Appetizers and Snacks" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Homemade Bread" data-i18n-es="Pan Casero">Homemade Bread</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Appetizers and Snacks" data-i18n-es="Entradas y piqueos">Appetizers and Snacks</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Homemade Bread is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Pan Casero es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Homemade Bread is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="brochetas-de-pollo.html" data-title="Chicken Skewers" data-description="Chicken Skewers is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Appetizers and Snacks" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Chicken Skewers" data-i18n-es="Brochetas De Pollo">Chicken Skewers</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Appetizers and Snacks" data-i18n-es="Entradas y piqueos">Appetizers and Snacks</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Chicken Skewers is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Brochetas De Pollo es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Chicken Skewers is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="pechuga-a-la-parrilla.html" data-title="Grilled Chicken Breast" data-description="Grilled Chicken Breast is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Appetizers and Snacks" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Grilled Chicken Breast" data-i18n-es="Pechuga A La Parrilla">Grilled Chicken Breast</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Appetizers and Snacks" data-i18n-es="Entradas y piqueos">Appetizers and Snacks</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Grilled Chicken Breast is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Pechuga A La Parrilla es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Grilled Chicken Breast is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="brochetas-de-pollo-con-pina-y-pimiento.html" data-title="Chicken Skewers with Pineapple and Peppers" data-description="Chicken Skewers with Pineapple and Peppers is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Appetizers and Snacks" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Chicken Skewers with Pineapple and Peppers" data-i18n-es="Brochetas De Pollo Con Piña Y Pimiento">Chicken Skewers with Pineapple and Peppers</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Appetizers and Snacks" data-i18n-es="Entradas y piqueos">Appetizers and Snacks</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Chicken Skewers with Pineapple and Peppers is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Brochetas De Pollo Con Piña Y Pimiento es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Chicken Skewers with Pineapple and Peppers is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="pollo-crujiente.html" data-title="Crispy Chicken" data-description="Crispy Chicken is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Appetizers and Snacks" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Crispy Chicken" data-i18n-es="Pollo Crujiente">Crispy Chicken</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Appetizers and Snacks" data-i18n-es="Entradas y piqueos">Appetizers and Snacks</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Crispy Chicken is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Pollo Crujiente es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Crispy Chicken is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="pollo-empanizado-con-salsa-de-limon.html" data-title="Breaded Chicken with Lemon Sauce" data-description="Breaded Chicken with Lemon Sauce is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Appetizers and Snacks" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Breaded Chicken with Lemon Sauce" data-i18n-es="Pollo Empanizado Con Salsa De Limón">Breaded Chicken with Lemon Sauce</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Appetizers and Snacks" data-i18n-es="Entradas y piqueos">Appetizers and Snacks</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Breaded Chicken with Lemon Sauce is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Pollo Empanizado Con Salsa De Limón es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Breaded Chicken with Lemon Sauce is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="variedades-de-pollo-empanizado.html" data-title="Breaded Chicken Variations" data-description="Breaded Chicken Variations is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Appetizers and Snacks" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Breaded Chicken Variations" data-i18n-es="Variedades De Pollo Empanizado">Breaded Chicken Variations</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Appetizers and Snacks" data-i18n-es="Entradas y piqueos">Appetizers and Snacks</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Breaded Chicken Variations is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Variedades De Pollo Empanizado es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Breaded Chicken Variations is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="alitas-de-pollo.html" data-title="Chicken Wings" data-description="Chicken Wings is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Appetizers and Snacks" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Chicken Wings" data-i18n-es="Alitas De Pollo">Chicken Wings</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Appetizers and Snacks" data-i18n-es="Entradas y piqueos">Appetizers and Snacks</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Chicken Wings is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Alitas De Pollo es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Chicken Wings is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="piernas-de-pollo-con-vegetales.html" data-title="Chicken Legs with Vegetables" data-description="Chicken Legs with Vegetables is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Appetizers and Snacks" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Chicken Legs with Vegetables" data-i18n-es="Piernas De Pollo Con Vegetales">Chicken Legs with Vegetables</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Appetizers and Snacks" data-i18n-es="Entradas y piqueos">Appetizers and Snacks</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Chicken Legs with Vegetables is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Piernas De Pollo Con Vegetales es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Chicken Legs with Vegetables is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="pollo-crujiente-con-parmesano.html" data-title="Crispy Parmesan Chicken" data-description="Crispy Parmesan Chicken is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Appetizers and Snacks" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Crispy Parmesan Chicken" data-i18n-es="Pollo Crujiente Con Parmesano">Crispy Parmesan Chicken</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Appetizers and Snacks" data-i18n-es="Entradas y piqueos">Appetizers and Snacks</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Crispy Parmesan Chicken is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Pollo Crujiente Con Parmesano es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Crispy Parmesan Chicken is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="cordon-bleu-de-pollo.html" data-title="Chicken Cordon Bleu" data-description="Chicken Cordon Bleu is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Appetizers and Snacks" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Chicken Cordon Bleu" data-i18n-es="Cordon Bleu De Pollo">Chicken Cordon Bleu</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Appetizers and Snacks" data-i18n-es="Entradas y piqueos">Appetizers and Snacks</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Chicken Cordon Bleu is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Cordon Bleu De Pollo es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Chicken Cordon Bleu is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="pechugas-rellenas-con-queso-boursin-y-espinaca.html" data-title="Boursin and Spinach Stuffed Chicken" data-description="Boursin and Spinach Stuffed Chicken is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Appetizers and Snacks" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Boursin and Spinach Stuffed Chicken" data-i18n-es="Pechugas Rellenas Con Queso Boursin Y Espinaca">Boursin and Spinach Stuffed Chicken</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Appetizers and Snacks" data-i18n-es="Entradas y piqueos">Appetizers and Snacks</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Boursin and Spinach Stuffed Chicken is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Pechugas Rellenas Con Queso Boursin Y Espinaca es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Boursin and Spinach Stuffed Chicken is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="albondigas-de-pollo-thai.html" data-title="Thai Chicken Meatballs" data-description="Thai Chicken Meatballs is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Appetizers and Snacks" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Thai Chicken Meatballs" data-i18n-es="Albóndigas De Pollo Thai">Thai Chicken Meatballs</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Appetizers and Snacks" data-i18n-es="Entradas y piqueos">Appetizers and Snacks</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Thai Chicken Meatballs is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Albóndigas De Pollo Thai es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Thai Chicken Meatballs is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="pechugas-rellenas-italianas.html" data-title="Italian Stuffed Chicken" data-description="Italian Stuffed Chicken is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Appetizers and Snacks" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Italian Stuffed Chicken" data-i18n-es="Pechugas Rellenas Italianas">Italian Stuffed Chicken</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Appetizers and Snacks" data-i18n-es="Entradas y piqueos">Appetizers and Snacks</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Italian Stuffed Chicken is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Pechugas Rellenas Italianas es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Italian Stuffed Chicken is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="albondigas-de-pollo-con-zucchini.html" data-title="Chicken Meatballs with Zucchini" data-description="Chicken Meatballs with Zucchini is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Appetizers and Snacks" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Chicken Meatballs with Zucchini" data-i18n-es="Albóndigas De Pollo Con Zucchini">Chicken Meatballs with Zucchini</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Appetizers and Snacks" data-i18n-es="Entradas y piqueos">Appetizers and Snacks</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Chicken Meatballs with Zucchini is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Albóndigas De Pollo Con Zucchini es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Chicken Meatballs with Zucchini is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+      </div>
+    </section>
+    <section class="category-section category-tuti">
+      <div class="category-header">
+        <h2 data-i18n="Fish and Seafood" data-i18n-es="Pescado y mariscos">Fish and Seafood</h2>
+        <p data-i18n="Browse Fish and Seafood recipes." data-i18n-es="Explora recetas de Pescado y mariscos.">Browse Fish and Seafood recipes.</p>
+      </div>
+      <div class="recipe-grid grid-2">
+        <a class="recipe-card recipe-card-tuti" href="salmon-con-mantequilla-y-limon.html" data-title="Salmon with Butter and Lemon" data-description="Salmon with Butter and Lemon is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Fish and Seafood" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Salmon with Butter and Lemon" data-i18n-es="Salmón Con Mantequilla Y Limón">Salmon with Butter and Lemon</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Fish and Seafood" data-i18n-es="Pescado y mariscos">Fish and Seafood</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Salmon with Butter and Lemon is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Salmón Con Mantequilla Y Limón es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Salmon with Butter and Lemon is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="pescado-rebozado.html" data-title="Pescado Rebozado" data-description="Pescado Rebozado is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Fish and Seafood" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Pescado Rebozado" data-i18n-es="Pescado Rebozado">Pescado Rebozado</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Fish and Seafood" data-i18n-es="Pescado y mariscos">Fish and Seafood</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Pescado Rebozado is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Pescado Rebozado es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Pescado Rebozado is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="pescado-a-la-menier.html" data-title="Pescado A La Menier" data-description="Pescado A La Menier is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Fish and Seafood" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Pescado A La Menier" data-i18n-es="Pescado A La Menier">Pescado A La Menier</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Fish and Seafood" data-i18n-es="Pescado y mariscos">Fish and Seafood</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Pescado A La Menier is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Pescado A La Menier es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Pescado A La Menier is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="pinchos-de-salmon-con-pina-y-tomates-cherry.html" data-title="Salmon Skewers with Pineapple and Cherry Tomatoes" data-description="Salmon Skewers with Pineapple and Cherry Tomatoes is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Fish and Seafood" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Salmon Skewers with Pineapple and Cherry Tomatoes" data-i18n-es="Pinchos De Salmón Con Piña Y Tomates Cherry">Salmon Skewers with Pineapple and Cherry Tomatoes</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Fish and Seafood" data-i18n-es="Pescado y mariscos">Fish and Seafood</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Salmon Skewers with Pineapple and Cherry Tomatoes is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Pinchos De Salmón Con Piña Y Tomates Cherry es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Salmon Skewers with Pineapple and Cherry Tomatoes is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="salmon-con-glaseado-de-durazno.html" data-title="Salmon with Peach Glaze" data-description="Salmon with Peach Glaze is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Fish and Seafood" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Salmon with Peach Glaze" data-i18n-es="Salmón Con Glaseado De Durazno">Salmon with Peach Glaze</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Fish and Seafood" data-i18n-es="Pescado y mariscos">Fish and Seafood</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Salmon with Peach Glaze is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Salmón Con Glaseado De Durazno es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Salmon with Peach Glaze is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="pescado-al-vapor-en-paquetitos.html" data-title="Steamed Fish Parcels" data-description="Steamed Fish Parcels is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Fish and Seafood" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Steamed Fish Parcels" data-i18n-es="Pescado Al Vapor En Paquetitos">Steamed Fish Parcels</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Fish and Seafood" data-i18n-es="Pescado y mariscos">Fish and Seafood</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Steamed Fish Parcels is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Pescado Al Vapor En Paquetitos es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Steamed Fish Parcels is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="camarones-al-ajillo.html" data-title="Garlic Shrimp" data-description="Garlic Shrimp is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Fish and Seafood" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Garlic Shrimp" data-i18n-es="Camarones Al Ajillo">Garlic Shrimp</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Fish and Seafood" data-i18n-es="Pescado y mariscos">Fish and Seafood</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Garlic Shrimp is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Camarones Al Ajillo es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Garlic Shrimp is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="calamares-rebozados.html" data-title="Battered Squid" data-description="Battered Squid is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Fish and Seafood" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Battered Squid" data-i18n-es="Calamares Rebozados">Battered Squid</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Fish and Seafood" data-i18n-es="Pescado y mariscos">Fish and Seafood</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Battered Squid is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Calamares Rebozados es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Battered Squid is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="camarones-po-boys.html" data-title="Shrimp Po' Boys" data-description="Shrimp Po' Boys is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Fish and Seafood" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Shrimp Po' Boys" data-i18n-es="Camarones Po’ Boys">Shrimp Po' Boys</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Fish and Seafood" data-i18n-es="Pescado y mariscos">Fish and Seafood</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Shrimp Po' Boys is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Camarones Po’ Boys es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Shrimp Po' Boys is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="hamburguesas.html" data-title="Burgers" data-description="Burgers is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Fish and Seafood" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Burgers" data-i18n-es="Hamburguesas">Burgers</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Fish and Seafood" data-i18n-es="Pescado y mariscos">Fish and Seafood</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Burgers is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Hamburguesas es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Burgers is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="filetes-rusos-o-albondigas.html" data-title="Russian Steaks or Meatballs" data-description="Russian Steaks or Meatballs is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Fish and Seafood" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Russian Steaks or Meatballs" data-i18n-es="Filetes Rusos O Albóndigas">Russian Steaks or Meatballs</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Fish and Seafood" data-i18n-es="Pescado y mariscos">Fish and Seafood</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Russian Steaks or Meatballs is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Filetes Rusos O Albóndigas es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Russian Steaks or Meatballs is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="albondigas-en-salsa-de-tomate.html" data-title="Meatballs in Tomato Sauce" data-description="Meatballs in Tomato Sauce is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Fish and Seafood" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Meatballs in Tomato Sauce" data-i18n-es="Albóndigas En Salsa De Tomate">Meatballs in Tomato Sauce</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Fish and Seafood" data-i18n-es="Pescado y mariscos">Fish and Seafood</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Meatballs in Tomato Sauce is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Albóndigas En Salsa De Tomate es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Meatballs in Tomato Sauce is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="steak-panzanella.html" data-title="Steak Panzanella" data-description="Steak Panzanella is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Fish and Seafood" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Steak Panzanella" data-i18n-es="Steak Panzanella">Steak Panzanella</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Fish and Seafood" data-i18n-es="Pescado y mariscos">Fish and Seafood</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Steak Panzanella is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Steak Panzanella es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Steak Panzanella is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="parrillada-de-res.html" data-title="Beef Grill Platter" data-description="Beef Grill Platter is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Fish and Seafood" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Beef Grill Platter" data-i18n-es="Parrillada De Res">Beef Grill Platter</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Fish and Seafood" data-i18n-es="Pescado y mariscos">Fish and Seafood</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Beef Grill Platter is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Parrillada De Res es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Beef Grill Platter is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+      </div>
+    </section>
+    <section class="category-section category-tuti">
+      <div class="category-header">
+        <h2 data-i18n="Pork and Meat" data-i18n-es="Cerdo y carnes">Pork and Meat</h2>
+        <p data-i18n="Browse Pork and Meat recipes." data-i18n-es="Explora recetas de Cerdo y carnes.">Browse Pork and Meat recipes.</p>
+      </div>
+      <div class="recipe-grid grid-2">
+        <a class="recipe-card recipe-card-tuti" href="filetes-de-cerdo-con-jamon-y-queso.html" data-title="Pork Cutlets with Ham and Cheese" data-description="Pork Cutlets with Ham and Cheese is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Pork and Meat" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Pork Cutlets with Ham and Cheese" data-i18n-es="Filetes De Cerdo Con Jamón Y Queso">Pork Cutlets with Ham and Cheese</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Pork and Meat" data-i18n-es="Cerdo y carnes">Pork and Meat</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Pork Cutlets with Ham and Cheese is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Filetes De Cerdo Con Jamón Y Queso es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Pork Cutlets with Ham and Cheese is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="chicharron-de-chancho.html" data-title="Pork Cracklings" data-description="Pork Cracklings is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Pork and Meat" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Pork Cracklings" data-i18n-es="Chicharrón De Chancho">Pork Cracklings</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Pork and Meat" data-i18n-es="Cerdo y carnes">Pork and Meat</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Pork Cracklings is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Chicharrón De Chancho es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Pork Cracklings is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="costillar-de-cerdo-glaseado.html" data-title="Glazed Pork Ribs" data-description="Glazed Pork Ribs is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Pork and Meat" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Glazed Pork Ribs" data-i18n-es="Costillar De Cerdo Glaseado">Glazed Pork Ribs</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Pork and Meat" data-i18n-es="Cerdo y carnes">Pork and Meat</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Glazed Pork Ribs is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Costillar De Cerdo Glaseado es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Glazed Pork Ribs is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="chancho-thai-dulce.html" data-title="Sweet Thai Pork" data-description="Sweet Thai Pork is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Pork and Meat" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Sweet Thai Pork" data-i18n-es="Chancho Thai Dulce">Sweet Thai Pork</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Pork and Meat" data-i18n-es="Cerdo y carnes">Pork and Meat</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Sweet Thai Pork is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Chancho Thai Dulce es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Sweet Thai Pork is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="pasta-carbonara.html" data-title="Pasta Carbonara" data-description="Pasta Carbonara is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Pork and Meat" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Pasta Carbonara" data-i18n-es="Pasta Carbonara">Pasta Carbonara</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Pork and Meat" data-i18n-es="Cerdo y carnes">Pork and Meat</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Pasta Carbonara is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Pasta Carbonara es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Pasta Carbonara is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+      </div>
+    </section>
+    <section class="category-section category-tuti">
+      <div class="category-header">
+        <h2 data-i18n="Vegetables and Vegetarian" data-i18n-es="Vegetales y recetas vegetarianas">Vegetables and Vegetarian</h2>
+        <p data-i18n="Browse Vegetables and Vegetarian recipes." data-i18n-es="Explora recetas de Vegetales y recetas vegetarianas.">Browse Vegetables and Vegetarian recipes.</p>
+      </div>
+      <div class="recipe-grid grid-2">
+        <a class="recipe-card recipe-card-tuti" href="tempura-de-coliflor-y-brocoli.html" data-title="Cauliflower and Broccoli Tempura" data-description="Cauliflower and Broccoli Tempura is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Vegetables and Vegetarian" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Cauliflower and Broccoli Tempura" data-i18n-es="Tempura De Coliflor Y Brócoli">Cauliflower and Broccoli Tempura</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Vegetables and Vegetarian" data-i18n-es="Vegetales y recetas vegetarianas">Vegetables and Vegetarian</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Cauliflower and Broccoli Tempura is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Tempura De Coliflor Y Brócoli es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Cauliflower and Broccoli Tempura is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="bastones-de-zucchini-crujientes.html" data-title="Crispy Zucchini Sticks" data-description="Crispy Zucchini Sticks is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Vegetables and Vegetarian" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Crispy Zucchini Sticks" data-i18n-es="Bastones De Zucchini Crujientes">Crispy Zucchini Sticks</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Vegetables and Vegetarian" data-i18n-es="Vegetales y recetas vegetarianas">Vegetables and Vegetarian</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Crispy Zucchini Sticks is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Bastones De Zucchini Crujientes es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Crispy Zucchini Sticks is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="coca-de-hojaldre-y-verduras.html" data-title="Puff Pastry Vegetable Tart" data-description="Puff Pastry Vegetable Tart is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Vegetables and Vegetarian" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Puff Pastry Vegetable Tart" data-i18n-es="Coca De Hojaldre Y Verduras">Puff Pastry Vegetable Tart</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Vegetables and Vegetarian" data-i18n-es="Vegetales y recetas vegetarianas">Vegetables and Vegetarian</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Puff Pastry Vegetable Tart is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Coca De Hojaldre Y Verduras es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Puff Pastry Vegetable Tart is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="tortilla-de-patatas.html" data-title="Potato Tortilla" data-description="Potato Tortilla is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Vegetables and Vegetarian" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Potato Tortilla" data-i18n-es="Tortilla De Patatas">Potato Tortilla</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Vegetables and Vegetarian" data-i18n-es="Vegetales y recetas vegetarianas">Vegetables and Vegetarian</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Potato Tortilla is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Tortilla De Patatas es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Potato Tortilla is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="verduras-salteadas.html" data-title="Sauteed Vegetables" data-description="Sauteed Vegetables is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Vegetables and Vegetarian" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Sauteed Vegetables" data-i18n-es="Verduras Salteadas">Sauteed Vegetables</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Vegetables and Vegetarian" data-i18n-es="Vegetales y recetas vegetarianas">Vegetables and Vegetarian</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Sauteed Vegetables is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Verduras Salteadas es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Sauteed Vegetables is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="tacos-de-setas.html" data-title="Mushroom Tacos" data-description="Mushroom Tacos is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Vegetables and Vegetarian" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Mushroom Tacos" data-i18n-es="Tacos De Setas">Mushroom Tacos</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Vegetables and Vegetarian" data-i18n-es="Vegetales y recetas vegetarianas">Vegetables and Vegetarian</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Mushroom Tacos is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Tacos De Setas es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Mushroom Tacos is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="pimientos-rellenos.html" data-title="Stuffed Peppers" data-description="Stuffed Peppers is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Vegetables and Vegetarian" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Stuffed Peppers" data-i18n-es="Pimientos Rellenos">Stuffed Peppers</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Vegetables and Vegetarian" data-i18n-es="Vegetales y recetas vegetarianas">Vegetables and Vegetarian</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Stuffed Peppers is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Pimientos Rellenos es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Stuffed Peppers is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="croquetas-de-verduras.html" data-title="Vegetable Croquettes" data-description="Vegetable Croquettes is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Vegetables and Vegetarian" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Vegetable Croquettes" data-i18n-es="Croquetas De Verduras">Vegetable Croquettes</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Vegetables and Vegetarian" data-i18n-es="Vegetales y recetas vegetarianas">Vegetables and Vegetarian</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Vegetable Croquettes is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Croquetas De Verduras es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Vegetable Croquettes is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="coliflor-gratinada.html" data-title="Cauliflower Gratin" data-description="Cauliflower Gratin is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Vegetables and Vegetarian" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Cauliflower Gratin" data-i18n-es="Coliflor Gratinada">Cauliflower Gratin</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Vegetables and Vegetarian" data-i18n-es="Vegetales y recetas vegetarianas">Vegetables and Vegetarian</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Cauliflower Gratin is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Coliflor Gratinada es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Cauliflower Gratin is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="coliflor-gratinada-asiatica.html" data-title="Asian Cauliflower Gratin" data-description="Asian Cauliflower Gratin is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Vegetables and Vegetarian" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Asian Cauliflower Gratin" data-i18n-es="Coliflor Gratinada Asiática">Asian Cauliflower Gratin</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Vegetables and Vegetarian" data-i18n-es="Vegetales y recetas vegetarianas">Vegetables and Vegetarian</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Asian Cauliflower Gratin is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Coliflor Gratinada Asiática es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Asian Cauliflower Gratin is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="papas-con-lentejas.html" data-title="Potatoes with Lentils" data-description="Potatoes with Lentils is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Vegetables and Vegetarian" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Potatoes with Lentils" data-i18n-es="Papas Con Lentejas">Potatoes with Lentils</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Vegetables and Vegetarian" data-i18n-es="Vegetales y recetas vegetarianas">Vegetables and Vegetarian</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Potatoes with Lentils is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Papas Con Lentejas es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Potatoes with Lentils is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="hamburguesas-de-garbanzos-y-espinacas.html" data-title="Chickpea and Spinach Burgers" data-description="Chickpea and Spinach Burgers is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Vegetables and Vegetarian" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Chickpea and Spinach Burgers" data-i18n-es="Hamburguesas De Garbanzos Y Espinacas">Chickpea and Spinach Burgers</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Vegetables and Vegetarian" data-i18n-es="Vegetales y recetas vegetarianas">Vegetables and Vegetarian</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Chickpea and Spinach Burgers is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Hamburguesas De Garbanzos Y Espinacas es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Chickpea and Spinach Burgers is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="berenjenas-rellenas.html" data-title="Stuffed Eggplant" data-description="Stuffed Eggplant is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Vegetables and Vegetarian" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Stuffed Eggplant" data-i18n-es="Berenjenas Rellenas">Stuffed Eggplant</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Vegetables and Vegetarian" data-i18n-es="Vegetales y recetas vegetarianas">Vegetables and Vegetarian</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Stuffed Eggplant is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Berenjenas Rellenas es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Stuffed Eggplant is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="vainitas-con-tofu.html" data-title="Green Beans with Tofu" data-description="Green Beans with Tofu is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Vegetables and Vegetarian" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Green Beans with Tofu" data-i18n-es="Vainitas Con Tofú">Green Beans with Tofu</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Vegetables and Vegetarian" data-i18n-es="Vegetales y recetas vegetarianas">Vegetables and Vegetarian</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Green Beans with Tofu is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Vainitas Con Tofú es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Green Beans with Tofu is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="tofu-empanizado.html" data-title="Breaded Tofu" data-description="Breaded Tofu is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Vegetables and Vegetarian" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Breaded Tofu" data-i18n-es="Tofú Empanizado">Breaded Tofu</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Vegetables and Vegetarian" data-i18n-es="Vegetales y recetas vegetarianas">Vegetables and Vegetarian</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Breaded Tofu is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Tofú Empanizado es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Breaded Tofu is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="tostadas-con-pesto.html" data-title="Pesto Toast" data-description="Pesto Toast is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Vegetables and Vegetarian" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Pesto Toast" data-i18n-es="Tostadas Con Pesto">Pesto Toast</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Vegetables and Vegetarian" data-i18n-es="Vegetales y recetas vegetarianas">Vegetables and Vegetarian</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Pesto Toast is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Tostadas Con Pesto es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Pesto Toast is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="fajitas-de-setas-y-verduras.html" data-title="Mushroom and Vegetable Fajitas" data-description="Mushroom and Vegetable Fajitas is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Vegetables and Vegetarian" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Mushroom and Vegetable Fajitas" data-i18n-es="Fajitas De Setas Y Verduras">Mushroom and Vegetable Fajitas</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Vegetables and Vegetarian" data-i18n-es="Vegetales y recetas vegetarianas">Vegetables and Vegetarian</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Mushroom and Vegetable Fajitas is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Fajitas De Setas Y Verduras es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Mushroom and Vegetable Fajitas is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+      </div>
+    </section>
+    <section class="category-section category-tuti">
+      <div class="category-header">
+        <h2 data-i18n="Sides" data-i18n-es="Acompañantes">Sides</h2>
+        <p data-i18n="Browse Sides recipes." data-i18n-es="Explora recetas de Acompañantes.">Browse Sides recipes.</p>
+      </div>
+      <div class="recipe-grid grid-2">
+        <a class="recipe-card recipe-card-tuti" href="papas-fritas.html" data-title="French Fries" data-description="French Fries is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Sides" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="French Fries" data-i18n-es="Papas Fritas">French Fries</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Sides" data-i18n-es="Acompañantes">Sides</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="French Fries is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Papas Fritas es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">French Fries is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="papas-fritas-congeladas.html" data-title="Frozen French Fries" data-description="Frozen French Fries is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Sides" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Frozen French Fries" data-i18n-es="Papas Fritas Congeladas">Frozen French Fries</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Sides" data-i18n-es="Acompañantes">Sides</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Frozen French Fries is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Papas Fritas Congeladas es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Frozen French Fries is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="papas-hasselback.html" data-title="Hasselback Potatoes" data-description="Hasselback Potatoes is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Sides" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Hasselback Potatoes" data-i18n-es="Papas Hasselback">Hasselback Potatoes</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Sides" data-i18n-es="Acompañantes">Sides</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Hasselback Potatoes is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Papas Hasselback es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Hasselback Potatoes is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="camote-frito.html" data-title="Fried Sweet Potato" data-description="Fried Sweet Potato is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Sides" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Fried Sweet Potato" data-i18n-es="Camote Frito">Fried Sweet Potato</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Sides" data-i18n-es="Acompañantes">Sides</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Fried Sweet Potato is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Camote Frito es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Fried Sweet Potato is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="camotes-estilo-cajun.html" data-title="Cajun Style Sweet Potatoes" data-description="Cajun Style Sweet Potatoes is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Sides" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Cajun Style Sweet Potatoes" data-i18n-es="Camotes Estilo Cajún">Cajun Style Sweet Potatoes</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Sides" data-i18n-es="Acompañantes">Sides</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Cajun Style Sweet Potatoes is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Camotes Estilo Cajún es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Cajun Style Sweet Potatoes is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="crutones.html" data-title="Croutons" data-description="Croutons is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Sides" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Croutons" data-i18n-es="Crutones">Croutons</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Sides" data-i18n-es="Acompañantes">Sides</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Croutons is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Crutones es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Croutons is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="platano-frito.html" data-title="Fried Plantain" data-description="Fried Plantain is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Sides" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Fried Plantain" data-i18n-es="Plátano Frito">Fried Plantain</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Sides" data-i18n-es="Acompañantes">Sides</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Fried Plantain is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Plátano Frito es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Fried Plantain is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="chips-de-platano.html" data-title="Plantain Chips" data-description="Plantain Chips is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Sides" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Plantain Chips" data-i18n-es="Chips De Plátano">Plantain Chips</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Sides" data-i18n-es="Acompañantes">Sides</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Plantain Chips is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Chips De Plátano es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Plantain Chips is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="tostones.html" data-title="Tostones" data-description="Tostones is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Sides" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Tostones" data-i18n-es="Tostones">Tostones</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Sides" data-i18n-es="Acompañantes">Sides</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Tostones is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Tostones es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Tostones is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+      </div>
+    </section>
+    <section class="category-section category-tuti">
+      <div class="category-header">
+        <h2 data-i18n="Desserts" data-i18n-es="Postres">Desserts</h2>
+        <p data-i18n="Browse Desserts recipes." data-i18n-es="Explora recetas de Postres.">Browse Desserts recipes.</p>
+      </div>
+      <div class="recipe-grid grid-2">
+        <a class="recipe-card recipe-card-tuti" href="mini-croissants.html" data-title="Mini Croissants" data-description="Mini Croissants is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Desserts" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Mini Croissants" data-i18n-es="Mini Croissants">Mini Croissants</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Desserts" data-i18n-es="Postres">Desserts</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Mini Croissants is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Mini Croissants es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Mini Croissants is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="churros.html" data-title="Churros" data-description="Churros is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Desserts" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Churros" data-i18n-es="Churros">Churros</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Desserts" data-i18n-es="Postres">Desserts</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Churros is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Churros es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Churros is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="magdalenas.html" data-title="Madeleines" data-description="Madeleines is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Desserts" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Madeleines" data-i18n-es="Magdalenas">Madeleines</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Desserts" data-i18n-es="Postres">Desserts</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Madeleines is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Magdalenas es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Madeleines is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="brownies.html" data-title="Brownies" data-description="Brownies is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Desserts" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Brownies" data-i18n-es="Brownies">Brownies</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Desserts" data-i18n-es="Postres">Desserts</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Brownies is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Brownies es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Brownies is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="crumble-de-manzana.html" data-title="Apple Crumble" data-description="Apple Crumble is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Desserts" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Apple Crumble" data-i18n-es="Crumble De Manzana">Apple Crumble</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Desserts" data-i18n-es="Postres">Desserts</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Apple Crumble is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Crumble De Manzana es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Apple Crumble is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+        <a class="recipe-card recipe-card-tuti" href="muffins-de-zapallo-y-zucchini.html" data-title="Pumpkin and Zucchini Muffins" data-description="Pumpkin and Zucchini Muffins is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-category="Desserts" data-owner="Tuti">
+          <div class="section-title">
+            <span data-i18n="Pumpkin and Zucchini Muffins" data-i18n-es="Muffins De Zapallo Y Zucchini">Pumpkin and Zucchini Muffins</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Desserts" data-i18n-es="Postres">Desserts</span>
+            <span class="recipe-badge owner-badge" data-i18n="Tuti's recipe" data-i18n-es="Receta de Tuti">Tuti's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="Pumpkin and Zucchini Muffins is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients." data-i18n-es="Muffins De Zapallo Y Zucchini es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir.">Pumpkin and Zucchini Muffins is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients.</p>
+        </a>
+      </div>
+    </section>
+    <section class="category-section">
+      <div class="category-header">
+        <h2 data-i18n="Specials" data-i18n-es="Especiales">Specials</h2>
+        <p data-i18n="Browse Specials recipes." data-i18n-es="Explora recetas de Especiales.">Browse Specials recipes.</p>
+      </div>
+      <div class="recipe-grid grid-2">
+        <a class="recipe-card" href="curried-lentils.html" data-title="Curried Beef, Lentils and Kale Stew" data-description="This one-pot curry stew combines beef, lentils, and kale for a warm, protein-rich meal with deep flavor and simple prep." data-category="Specials" data-owner="Lobo">
+          <div class="section-title">
+            <span data-i18n="Curried Beef, Lentils and Kale Stew" data-i18n-es="Guiso de carne, lentejas y kale al curry">Curried Beef, Lentils and Kale Stew</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Specials" data-i18n-es="Especiales">Specials</span>
+            <span class="recipe-badge owner-badge" data-i18n="Lobo's recipe" data-i18n-es="Receta de Lobo">Lobo's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="This one-pot curry stew combines beef, lentils, and kale for a warm, protein-rich meal with deep flavor and simple prep." data-i18n-es="Este guiso al curry de una sola olla combina carne, lentejas y kale para una comida reconfortante, con mucha proteina y pasos simples.">This one-pot curry stew combines beef, lentils, and kale for a warm, protein-rich meal with deep flavor and simple prep.</p>
+        </a>
+        <a class="recipe-card" href="chicken-soup.html" data-title="Hearty Chicken and Vegetable Soup" data-description="This comforting chicken soup uses tender chicken, potatoes, vegetables, and pasta for an easy weeknight pot." data-category="Specials" data-owner="Lobo">
+          <div class="section-title">
+            <span data-i18n="Hearty Chicken and Vegetable Soup" data-i18n-es="Sopa casera de pollo y verduras">Hearty Chicken and Vegetable Soup</span>
+          </div>
+          <div class="recipe-meta">
+            <span class="recipe-badge" data-i18n="Specials" data-i18n-es="Especiales">Specials</span>
+            <span class="recipe-badge owner-badge" data-i18n="Lobo's recipe" data-i18n-es="Receta de Lobo">Lobo's recipe</span>
+          </div>
+          <p class="recipe-description" data-i18n="This comforting chicken soup uses tender chicken, potatoes, vegetables, and pasta for an easy weeknight pot." data-i18n-es="Esta sopa casera de pollo lleva verduras, papa y pasta pequena para una comida rendidora y facil de preparar entre semana.">This comforting chicken soup uses tender chicken, potatoes, vegetables, and pasta for an easy weeknight pot.</p>
+        </a>
+      </div>
+    </section>
+    <div class="footer" data-i18n="Open any card to view the bilingual recipe page with cleaned ingredients and instructions." data-i18n-es="Abre cualquier receta para ver su pagina bilingue con ingredientes e instrucciones ordenadas.">Open any card to view the bilingual recipe page with cleaned ingredients and instructions.</div>
+  </article>
+</body>
+</html>
