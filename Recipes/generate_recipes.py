@@ -6,6 +6,7 @@ from typing import Iterable
 
 SOURCE = Path(__file__).parent / "tutis-airfryer-recipes-cleaned.txt"
 OUTPUT_DIR = Path(__file__).parent
+LOCKED_RECIPE_FILES = {"chicken-soup.html", "curried-lentils.html"}
 
 EXISTING_FILENAME_MAP = {
     "TOSTADAS FRANCESAS DULCES": "tostadas-francesas-dulces.html",
@@ -45,7 +46,7 @@ CATEGORY_LABELS = {
 TITLE_TRANSLATIONS = {
     "TOSTADAS FRANCESAS DULCES": "Sweet French Toast",
     "OMELETTE O TORTILLA DE HUEVO": "Air Fryer Omelet",
-    "HUEVOS AL PLATO": "Eggs in a Basket",
+    "HUEVOS AL PLATO": "Baked Eggs with Potatoes and Pancetta",
     "TOSTADAS FRANCESAS EN CUPCAKES CON FRAMBUESAS": "French Toast Cupcakes",
     "CR\u00c8ME BR\u00dbL\u00c9E CON MERMELADA DE BERRIES": "Creme Brulee with Berry Jam",
     "GRANOLA": "Granola",
@@ -58,7 +59,7 @@ TITLE_TRANSLATIONS = {
     "EMPANADAS": "Empanadas",
     "EMPANADAS GALLEGAS": "Galician Empanadas",
     "FALAFEL": "Falafel",
-    "QUEQUITOS DE GARBANZO": "Chickpea Muffins",
+    "QUEQUITOS DE GARBANZO": "Chickpea Croquettes",
     "CROQUETAS DE AT\u00daN": "Tuna Croquettes",
     "CROQUETAS CON TOCINO O JAM\u00d3N": "Bacon or Ham Croquettes",
     "CROQUETAS DE QUESO": "Cheese Croquettes",
@@ -82,6 +83,8 @@ TITLE_TRANSLATIONS = {
     "PECHUGAS RELLENAS ITALIANAS": "Italian Stuffed Chicken",
     "ALB\u00d3NDIGAS DE POLLO CON ZUCCHINI": "Chicken Meatballs with Zucchini",
     "SALM\u00d3N CON MANTEQUILLA Y LIM\u00d3N": "Salmon with Butter and Lemon",
+    "PESCADO REBOZADO": "Breaded Fish",
+    "PESCADO A LA MENIER": "Fish Meuniere",
     "PINCHOS DE SALM\u00d3N CON PI\u00d1A Y TOMATES CHERRY": "Salmon Skewers with Pineapple and Cherry Tomatoes",
     "SALM\u00d3N CON GLASEADO DE DURAZNO": "Salmon with Peach Glaze",
     "PESCADO AL VAPOR EN PAQUETITOS": "Steamed Fish Parcels",
@@ -94,7 +97,7 @@ TITLE_TRANSLATIONS = {
     "STEAK PANZANELLA": "Steak Panzanella",
     "PARRILLADA DE RES": "Beef Grill Platter",
     "FILETES DE CERDO CON JAM\u00d3N Y QUESO": "Pork Cutlets with Ham and Cheese",
-    "CHICHARR\u00d3N DE CHANCHO": "Pork Cracklings",
+    "CHICHARR\u00d3N DE CHANCHO": "Crispy Pork Chunks",
     "COSTILLAR DE CERDO GLASEADO": "Glazed Pork Ribs",
     "CHANCHO THAI DULCE": "Sweet Thai Pork",
     "TEMPURA DE COLIFLOR Y BR\u00d3COLI": "Cauliflower and Broccoli Tempura",
@@ -125,10 +128,87 @@ TITLE_TRANSLATIONS = {
     "TOSTONES": "Tostones",
     "MINI CROISSANTS": "Mini Croissants",
     "CHURROS": "Churros",
-    "MAGDALENAS": "Madeleines",
+    "MAGDALENAS": "Spanish Muffins",
     "BROWNIES": "Brownies",
     "CRUMBLE DE MANZANA": "Apple Crumble",
     "MUFFINS DE ZAPALLO Y ZUCCHINI": "Pumpkin and Zucchini Muffins",
+}
+
+MANUAL_INGREDIENT_OVERRIDES_ES = {
+    "PL\u00c1TANO CARAMELIZADO": [
+        "1 pl\u00e1tano",
+        "Aceite de palta o de coco",
+        "Az\u00facar moreno",
+    ],
+    "VARIEDADES DE POLLO EMPANIZADO": [
+        "Filetes o cuadrados de pechuga de pollo no muy delgados, o solomillos de pollo",
+        "Salsa de soya, jugo de lim\u00f3n, p\u00e1prika, comino, jengibre, c\u00farcuma, aj\u00ed en polvo o hierbas a elecci\u00f3n",
+        "Harina o maizena",
+        "Huevos batidos con los condimentos elegidos",
+        "Pan rallado, panko o corn flakes triturados",
+        "Aceite para rociar o pincelar",
+    ],
+    "PAPAS FRITAS": [
+        "Papas",
+        "Aceite en spray",
+        "Sal",
+    ],
+    "PAPAS FRITAS CONGELADAS": [
+        "Papas fritas congeladas",
+        "Sal",
+    ],
+    "PAPAS HASSELBACK": [
+        "4 papas con cáscara",
+        "2 palitos de brocheta",
+        "3 cucharadas de mantequilla blanda",
+        "Sal y pimienta",
+        "1 ajo picado",
+        "Tomillo u otra hierba de su preferencia",
+    ],
+    "CAMOTE FRITO": [
+        "1 camote",
+        "1 cucharadita de aceite",
+        "Sal o hierbas al gusto",
+    ],
+    "CAMOTES ESTILO CAJ\u00daN": [
+        "1 camote",
+        "1 cucharada de aceite de oliva",
+        "Cebolla y ajo en polvo opcionales",
+        "Sal",
+        "Pimienta",
+        "Paprika",
+        "Pimienta de Cayena",
+    ],
+    "CRUTONES": [
+        "Pan de molde o el pan de su gusto",
+        "Sal",
+        "Aceite de oliva en spray",
+    ],
+    "PL\u00c1TANO FRITO": [
+        "1 pl\u00e1tano bellaco",
+        "Aceite de palta o de girasol",
+    ],
+    "CHIPS DE PL\u00c1TANO": [
+        "1 pl\u00e1tano bellaco verde",
+        "Aceite en spray",
+        "Sal",
+    ],
+    "TOSTONES": [
+        "1 pl\u00e1tano macho verde",
+        "1 cucharada de aceite de palta",
+        "Agua",
+        "1 cucharadita de sal",
+    ],
+}
+
+SUMMARY_OVERRIDES_EN = {
+    "CAMARONES AL AJILLO": "Garlic Shrimp is a quick air fryer recipe with shrimp, garlic, olive oil, and bright citrus notes.",
+    "CALAMARES REBOZADOS": "Battered Squid is a crisp air fryer seafood recipe served with lemon and simple seasoning.",
+    "CAMARONES PO’ BOYS": "Shrimp Po' Boys combines crispy Cajun-style shrimp with lettuce, tomato, and a creamy spread.",
+    "FAJITAS DE SETAS Y VERDURAS": "Mushroom and Vegetable Fajitas pair seasoned air-fried vegetables with a creamy avocado sauce.",
+    "PAPAS FRITAS": "French Fries are classic air fryer potatoes with a crisp exterior and tender center.",
+    "CHIPS DE PLÁTANO": "Plantain Chips are thin, crunchy slices cooked in the air fryer with simple seasoning.",
+    "CRUMBLE DE MANZANA": "Apple Crumble is a warm fruit dessert with a sweet crumb topping and citrus aroma.",
 }
 
 EXTRA_RECIPES = [
@@ -138,24 +218,45 @@ EXTRA_RECIPES = [
         "owner": "Lobo",
         "filename": "curried-lentils.html",
         "title_en": "Curried Beef, Lentils and Kale Stew",
-        "title_es": "Guiso de carne, lentejas y kale al curry",
-        "summary_en": "This one-pot curry stew combines beef, lentils, and kale for a warm, protein-rich meal with deep flavor and simple prep.",
-        "summary_es": "Este guiso al curry de una sola olla combina carne, lentejas y kale para una comida reconfortante, con mucha proteina y pasos simples.",
+        "title_es": "Guiso de carne, lentejas y col rizada con curry",
+        "summary_en": "A Michelin-inspired one-pot stew built with beef, soaked lentils, kale, and warming curry spices. It’s designed to be deeply savory, nourishing, and easy to follow on a phone while cooking.",
+        "summary_es": "Un guiso de una sola olla inspirado en la cocina Michelin, hecho con carne de res, lentejas remojadas, col rizada y especias de curry. Está pensado para ser sabroso, nutritivo y fácil de seguir desde el celular mientras cocinas.",
         "ingredients_es": [
-            "450 gramos de carne molida",
-            "1 taza de lentejas verdes remojadas",
-            "1 cebolla mediana picada",
-            "3 dientes de ajo picados",
-            "1 cucharadita de curry en polvo",
-            "4 tazas de caldo de carne o verduras",
-            "1 taza de kale picado",
-            "Sal y pimienta al gusto",
+            "1 lb ground beef (85/15 for flavor)",
+            "1 cup green lentils, soaked 4 hours",
+            "1 cup cooked chickpeas (optional)",
+            "1 large yellow onion, diced",
+            "3 cloves garlic, minced",
+            "1 inch ginger, grated",
+            "1 carrot, diced",
+            "1 red bell pepper, diced",
+            "1–2 cups chopped kale (stems removed)",
+            "1 cup diced tomatoes",
+            "2 medium potatoes, cubed (optional)",
+            "1½ tsp curry powder",
+            "1 tsp ground cumin",
+            "1 tsp ground coriander",
+            "½ tsp turmeric",
+            "½ tsp smoked paprika",
+            "½ tsp garam masala",
+            "¼ tsp cayenne (optional)",
+            "4 cups beef or vegetable broth",
+            "1 tbsp tomato paste",
+            "½ cup coconut milk",
+            "Juice of ½ lemon",
+            "1 tbsp olive oil",
+            "Salt and black pepper",
+            "Fresh cilantro or parsley",
         ],
         "instructions_es": [
-            "Dora la carne en una olla con un poco de aceite hasta que tome buen color.",
-            "Agrega cebolla, ajo y curry, y cocina por 3 minutos para levantar aroma.",
-            "Incorpora lentejas y caldo, baja a fuego medio y cocina hasta que las lentejas esten tiernas.",
-            "Agrega el kale al final, rectifica sal y pimienta, y deja reposar 5 minutos antes de servir.",
+            "Prep first: Dice vegetables, rinse lentils, and chop kale. Keep kale in cold water until later.",
+            "Brown the beef: Heat oil in a large pot over medium-high heat. Add beef and let it brown without stirring for 2 minutes, then break it apart and cook until deep brown.",
+            "Build the base: Add onion, carrot, and bell pepper. Cook 6–8 minutes until caramelized. Stir in garlic and ginger, cook 1 minute.",
+            "Bloom the spices: Add curry powder, cumin, coriander, turmeric, paprika, and cayenne. Toast for 30–45 seconds until fragrant.",
+            "Add tomatoes & broth: Stir in tomato paste, diced tomatoes, soaked lentils, and broth. Bring to a gentle boil, then reduce to a simmer.",
+            "Simmer: Cook 25–30 minutes until lentils are tender and stew is thickening.",
+            "Add greens: Stir in chickpeas (if using) and kale. Simmer 5–7 minutes until kale softens.",
+            "Finish: Add coconut milk, lemon juice, salt, and pepper. Sprinkle fresh cilantro on top and serve warm.",
         ],
     },
     {
@@ -164,23 +265,33 @@ EXTRA_RECIPES = [
         "owner": "Lobo",
         "filename": "chicken-soup.html",
         "title_en": "Hearty Chicken and Vegetable Soup",
-        "title_es": "Sopa casera de pollo y verduras",
-        "summary_en": "This comforting chicken soup uses tender chicken, potatoes, vegetables, and pasta for an easy weeknight pot.",
-        "summary_es": "Esta sopa casera de pollo lleva verduras, papa y pasta pequena para una comida rendidora y facil de preparar entre semana.",
+        "title_es": "Sopa reconfortante de pollo y verduras",
+        "summary_en": "A classic chicken soup built for easy weeknight cooking, with tender chicken breasts, potatoes, small pasta, and a colorful blend of vegetables. Made for mobile-friendly reading and simple follow-along prep.",
+        "summary_es": "Una sopa clásica de pollo ideal para cenas entre semana, con pechugas tiernas, papas, pasta pequeña y una mezcla colorida de verduras. Pensada para leerla en el celular y seguirla paso a paso.",
         "ingredients_es": [
-            "2 pechugas de pollo",
-            "1 cebolla mediana picada",
-            "2 papas medianas en cubos",
-            "1 taza de pasta pequena",
-            "2 tazas de verduras mixtas",
-            "1 litro de caldo de pollo",
-            "Sal y pimienta al gusto",
+            "2 chicken breasts (1–1.5 lb)",
+            "1 tbsp olive oil or butter",
+            "1 medium onion, diced",
+            "3 celery stalks, sliced",
+            "2 cloves garlic, minced (optional)",
+            "2 medium potatoes, ½-inch cubes",
+            "1½–2 cups frozen mixed vegetables",
+            "1 cup small pasta (ditalini, elbow, shells, rotini)",
+            "32 oz chicken broth",
+            "4 cups water (or extra broth for richer soup)",
+            "1 tsp dried thyme",
+            "1 tsp dried parsley",
+            "½ tsp black pepper",
+            "Salt to taste",
+            "1 bay leaf (optional)",
         ],
         "instructions_es": [
-            "Sofrie la cebolla en una olla con aceite hasta que quede suave.",
-            "Agrega el caldo y las pechugas, y cocina a fuego medio hasta que el pollo este listo.",
-            "Retira el pollo, desmenuzalo, y devuelve la carne a la olla con papa, verduras y pasta.",
-            "Cocina hasta que todo este tierno, ajusta sal y pimienta, y sirve caliente.",
+            "Sauté aromatics: Heat oil in a large pot over medium heat. Add onion and celery, cook 5–7 minutes until soft. Add garlic and cook 30 seconds.",
+            "Simmer soup base: Add broth, water, thyme, parsley, pepper, and bay leaf. Bring to a gentle boil, then reduce to a simmer for 10 minutes.",
+            "Add chicken: Place the chicken breasts into the pot. Simmer gently for 15–20 minutes until they reach 165°F (74°C).",
+            "Add potatoes: Add cubed potatoes and simmer 10–12 minutes until nearly tender.",
+            "Add vegetables & pasta: Stir in frozen vegetables and pasta. Simmer 8–10 minutes until pasta is al dente and potatoes are tender.",
+            "Finish: Remove the chicken, shred it with forks, and return to the pot. Taste, adjust salt and pepper, remove bay leaf, and rest 5 minutes before serving.",
         ],
     },
 ]
@@ -215,6 +326,56 @@ PHRASE_REPLACEMENTS = {
     "voltear": "flip",
 }
 
+INSTRUCTION_PHRASE_REPLACEMENTS_EN = {
+    "papel de hornear": "parchment paper",
+    "freidora de aire": "air fryer",
+    "fuego medio": "medium heat",
+    "fuego bajo": "low heat",
+    "fuego alto": "high heat",
+    "dejar reposar": "let rest",
+    "darle vueltas": "stir",
+    "volver a darle vueltas": "stir again",
+    "picada en cuadritos": "diced",
+    "picado en cuadritos": "diced",
+    "sal y pimienta": "salt and pepper",
+}
+
+INSTRUCTION_WORD_REPLACEMENTS_EN = {
+    "rejilla": "rack",
+    "huequitos": "small holes",
+    "rociarlo": "spray it",
+    "pincelarlo": "brush it",
+    "revolver": "stir",
+    "mezclar": "mix",
+    "agregar": "add",
+    "anadir": "add",
+    "incorporar": "add",
+    "continuar": "continue",
+    "cocinar": "cook",
+    "precalentar": "preheat",
+    "retirar": "remove",
+    "envolver": "wrap",
+    "dejar": "let",
+    "servir": "serve",
+    "colocar": "place",
+    "poner": "place",
+    "nevera": "fridge",
+    "minutos": "minutes",
+    "minuto": "minute",
+    "grados": "degrees",
+    "mas": "more",
+    "hasta": "until",
+    "luego": "then",
+    "despues": "after",
+    "mientras": "while",
+    "sin": "without",
+    "todo": "everything",
+    "la": "the",
+    "el": "the",
+    "los": "the",
+    "las": "the",
+}
+
 UNIT_REPLACEMENTS_EN = {
     "cucharada": "tablespoon",
     "cucharadas": "tablespoons",
@@ -234,7 +395,7 @@ INSTRUCTION_VERBS = (
     "voltear", "dejar", "sazonar", "espolvorear", "sofreir", "sofreir", "dorar", "rellenar", "servir",
 )
 
-RE_AMOUNT = re.compile(r"\b\d+[\d/.,]*\s*(?:c\.|c|cucharada|cucharadita|t\.|t|taza|gr|gramos|ml|oz|lb|kg|k|litro|litros)?\b", re.IGNORECASE)
+RE_AMOUNT = re.compile(r"(?:\b\d+[\d/.,]*|[¼½¾⅓⅔⅛⅜⅝⅞])\s*(?:c\.|c|cucharada|cucharadita|t\.|t|taza|gr|gramos|ml|oz|lb|kg|k|litro|litros)?\b", re.IGNORECASE)
 RE_MULTISPACE = re.compile(r"\s{2,}")
 RE_SPLIT_COLS = re.compile(r"\t+|\s{3,}")
 RE_SENTENCE_END = re.compile(r"[.!?]$")
@@ -244,6 +405,242 @@ SPANISH_MARKERS = {
     "de", "la", "el", "los", "las", "con", "para", "por", "una", "un", "del", "al", "y",
     "pollo", "papa", "papas", "cebolla", "ajo", "pimiento", "tomate", "queso", "huevo", "huevos",
     "mezclar", "agregar", "poner", "cocinar", "sazonar", "freidora", "aire", "minutos", "grados",
+}
+
+TERM_REPLACEMENTS_EN = {
+    "orégano seco": "dried oregano",
+    "oregano seco": "dried oregano",
+    "rociar o pincelar": "spray or brush",
+    "rociar": "spray",
+    "pincelar": "brush",
+    "seco": "dried",
+    "carne de res": "beef",
+    "sin grasa": "lean",
+    "pechugas de pollo": "chicken breasts",
+    "pechuga de pollo": "chicken breast",
+    "camarones": "shrimp",
+    "camaron": "shrimp",
+    "calamares": "squid",
+    "calamar": "squid",
+    "salsa tartara": "tartar sauce",
+    "panes de molde": "sandwich rolls",
+    "panes": "rolls",
+    "panko sazonado": "seasoned panko",
+    "setas shiitake frescas": "fresh shiitake mushrooms",
+    "manzanas amarillas": "yellow apples",
+    "copos de avena": "rolled oats",
+    "pimenton dulce": "sweet paprika",
+    "pimentón dulce": "sweet paprika",
+    "pimenton": "paprika",
+    "pimentón": "paprika",
+    "mayonesa": "mayonnaise",
+    "jengibre": "ginger",
+    "canela": "cinnamon",
+    "nueces": "walnuts",
+    "pecanas": "pecans",
+    "agua": "water",
+    "madura": "ripe",
+    "fria": "cold",
+    "fría": "cold",
+    "frescas": "fresh",
+    "fresca": "fresh",
+    "amarillas": "yellow",
+    "aceite de palta o de coco": "avocado or coconut oil",
+    "aceite de oliva en spray": "olive oil cooking spray",
+    "pan de su gusto": "bread of your choice",
+    "para la salsa": "for the sauce",
+    "sazonador de fajitas": "fajita seasoning",
+    "sazonador cajun": "cajun seasoning",
+    "en rodajas": "sliced",
+    "en cuadritos": "diced",
+    "en cuadrados": "diced",
+    "en tiritas": "thin strips",
+    "en tiras": "strips",
+    "en anillos": "rings",
+    "en laminas": "sliced",
+    "pan de molde": "sandwich bread",
+    "jugo de limon": "lemon juice",
+    "jugo de limón": "lemon juice",
+    "vinagre blanco": "white vinegar",
+    "azucar moreno": "brown sugar",
+    "azúcar moreno": "brown sugar",
+    "queso rallado": "grated cheese",
+    "de su preferencia": "of your choice",
+    "de su gusto": "of your choice",
+    "aceite de oliva": "olive oil",
+    "aceite de palta": "avocado oil",
+    "aceite de coco": "coconut oil",
+    "aceite neutro": "neutral oil",
+    "aceite en spray": "cooking spray",
+    "sillao dulce": "sweet soy sauce",
+    "sillao": "soy sauce",
+    "salsa de soya": "soy sauce",
+    "salsa picante": "hot sauce",
+    "maizena": "cornstarch",
+    "palta": "avocado",
+    "setas": "mushrooms",
+    "tofu": "tofu",
+    "vainitas": "green beans",
+    "lenteja": "lentils",
+    "lentejas": "lentils",
+    "camote": "sweet potato",
+    "zapallo": "pumpkin",
+    "mantequilla": "butter",
+    "leche": "milk",
+    "miel": "honey",
+    "frambuesas": "raspberries",
+    "frambuesa": "raspberry",
+    "arandanos": "blueberries",
+    "fresas": "strawberries",
+    "couscous": "couscous",
+    "garbanzos": "chickpeas",
+    "lata": "can",
+    "jugo": "juice",
+    "zumo": "juice",
+    "naranja": "orange",
+    "vainilla": "vanilla",
+    "zanahoria": "carrot",
+    "tomillo": "thyme",
+    "tilapia": "tilapia",
+    "tilapias": "tilapia fillets",
+    "filetes": "fillets",
+    "costillas": "ribs",
+    "vinagre": "vinegar",
+    "hierbas": "herbs",
+    "azucar": "sugar",
+    "ralladura": "zest",
+    "limon": "lemon",
+    "limón": "lemon",
+    "mediana": "medium",
+    "medianas": "medium",
+    "grande": "large",
+    "grandes": "large",
+    "gruesa": "thick",
+    "gruesas": "thick",
+    "grosor": "thickness",
+    "blanco": "white",
+    "rojo": "red",
+    "roja": "red",
+    "blanca": "white",
+    "blanco": "white",
+    "mediano": "medium",
+    "medianos": "medium",
+    "opcional": "optional",
+    "empanizar": "breading",
+    "eleccion": "choice",
+    "ají": "chili",
+    "aji": "chili",
+    "ají colorado": "red chili",
+    "jamón": "ham",
+    "jamon": "ham",
+    "lechuga": "lettuce",
+    "integral": "whole wheat",
+    "ajonjolí": "sesame",
+    "ajonjoli": "sesame",
+    "corn flakes": "cornflakes",
+    "hojaldre": "puff pastry",
+    "quark": "quark",
+    "tocino": "bacon",
+    "pancetta": "pancetta",
+    "salame": "salami",
+    "provolone": "provolone",
+    "hierbabuena": "mint",
+    "cebollinos": "scallions",
+    "maní": "peanuts",
+    "mani": "peanuts",
+    "masa de hojaldre": "puff pastry",
+    "masa para empanadas": "empanada dough",
+    "aceite": "oil",
+    "sal": "salt",
+    "pimienta": "pepper",
+    "ajo": "garlic",
+    "cebolla": "onion",
+    "pimiento": "bell pepper",
+    "tomate": "tomato",
+    "tomates": "tomatoes",
+    "papas": "potatoes",
+    "papa": "potato",
+    "pollo": "chicken",
+    "carne": "beef",
+    "cerdo": "pork",
+    "pescado": "fish",
+    "camarones": "shrimp",
+    "queso": "cheese",
+    "huevo": "egg",
+    "huevos": "eggs",
+    "harina": "flour",
+    "pan rallado": "breadcrumbs",
+    "pan": "bread",
+    "perejil": "parsley",
+    "oregano": "oregano",
+    "orégano": "oregano",
+    "comino": "cumin",
+    "paprika": "paprika",
+    "yogurt": "yogurt",
+    "platano": "plantain",
+    "plátano": "plantain",
+    "zucchini": "zucchini",
+    "champiñones": "mushrooms",
+    "champiñon": "mushroom",
+    "espinaca": "spinach",
+    "freidora de aire": "air fryer",
+    "pechuga": "chicken breast",
+    "pechugas": "chicken breasts",
+    "alitas": "wings",
+    "dientes": "cloves",
+    "caldo": "broth",
+    "verduras": "vegetables",
+    "mediana": "medium",
+    "medianas": "medium",
+    "picado": "chopped",
+    "picada": "chopped",
+    "picados": "chopped",
+    "picadas": "chopped",
+    "cortado": "cut",
+    "cortada": "cut",
+    "cortados": "cut",
+    "cortadas": "cut",
+    "en cubos": "diced",
+    "en polvo": "powder",
+    "al gusto": "to taste",
+    "sin piel": "skinless",
+    "desmenuzado": "shredded",
+    "desmenuzada": "shredded",
+    "mezcla": "mixture",
+    "tajadas": "slices",
+    "tajada": "slice",
+    "trozos": "pieces",
+    "trozo": "piece",
+    "molida": "ground",
+    "molido": "ground",
+    "cocido": "cooked",
+    "cocida": "cooked",
+    "cocidos": "cooked",
+    "cocidas": "cooked",
+    "rallado": "grated",
+    "rallada": "grated",
+    "verde": "green",
+    "dulce": "sweet",
+}
+
+UNIT_MAP_EN = {
+    "cucharada": "tbsp",
+    "cucharadas": "tbsp",
+    "cucharadita": "tsp",
+    "cucharaditas": "tsp",
+    "taza": "cup",
+    "tazas": "cups",
+    "gramos": "g",
+    "gramo": "g",
+    "mililitros": "ml",
+    "litro": "L",
+    "litros": "L",
+    "onzas": "oz",
+    "libras": "lb",
+}
+
+STOP_WORDS_ES = {
+    "de", "del", "la", "las", "el", "los", "con", "para", "por", "y", "o", "en", "al", "a", "un", "una"
 }
 
 
@@ -285,7 +682,7 @@ def is_recipe_heading(line: str) -> bool:
         return False
     if re.search(r"\d", normalized):
         return False
-    return bool(re.match(r"^[A-Z\u00c1\u00c9\u00cd\u00d3\u00da\u00d10-9\s\-(),.'\u2019]+$", normalized))
+    return any(ch.isalpha() for ch in normalized) and all(not ch.isalpha() or ch.isupper() for ch in text)
 
 
 def english_title_from_spanish(title: str) -> str:
@@ -300,19 +697,27 @@ def parse_recipes(raw_text: str) -> list[dict]:
     lines = raw_text.splitlines()
     current_category = "DESAYUNOS"
     recipe_markers = []
+    boundary_indexes = []
 
     for idx, line in enumerate(lines):
         if not line.strip():
             continue
+        if normalize_heading(line) in IGNORED_HEADINGS:
+            boundary_indexes.append(idx)
+            continue
         if is_section_header(line):
             current_category = normalize_heading(line)
+            boundary_indexes.append(idx)
             continue
         if is_recipe_heading(line):
             recipe_markers.append((idx, normalize_heading(line), current_category))
+            boundary_indexes.append(idx)
+
+    boundary_indexes = sorted(set(boundary_indexes))
 
     recipes = []
     for i, (start_idx, heading, category) in enumerate(recipe_markers):
-        end_idx = recipe_markers[i + 1][0] if i + 1 < len(recipe_markers) else len(lines)
+        end_idx = next((idx for idx in boundary_indexes if idx > start_idx), len(lines))
         block = [lines[j].rstrip() for j in range(start_idx + 1, end_idx) if lines[j].strip()]
         if not block:
             continue
@@ -333,14 +738,62 @@ def strip_accents(text: str) -> str:
     return "".join(ch for ch in n if not unicodedata.combining(ch))
 
 
-def expand_abbreviations_es(text: str) -> str:
-    text = re.sub(r"\bC\.\s*", "cucharada ", text)
-    text = re.sub(r"\bc\.\s*", "cucharadita ", text)
-    text = re.sub(r"\bt\.\s*", "taza ", text)
+def _normalize_common_units_es(text: str) -> str:
     text = re.sub(r"\bgr\b", "gramos", text, flags=re.IGNORECASE)
     text = re.sub(r"\bml\.?\b", "mililitros", text, flags=re.IGNORECASE)
     text = re.sub(r"\boz\b", "onzas", text, flags=re.IGNORECASE)
     text = re.sub(r"\blb\b", "libras", text, flags=re.IGNORECASE)
+    text = re.sub(r"\bl\.\b", "litro", text, flags=re.IGNORECASE)
+    text = re.sub(r"\bk\b", "kilo", text, flags=re.IGNORECASE)
+    return text
+
+
+def normalize_ingredient_spanish(text: str) -> str:
+    text = re.sub(r"\bC\.(?=\s|$)", "cucharada", text)
+    text = re.sub(r"\bc\.(?=\s|$)", "cucharadita", text)
+    text = re.sub(r"\bt\.(?=\s|$)", "taza", text)
+    text = re.sub(r"\bC(?=\s+de\b|\s+[A-Za-zÁÉÍÓÚáéíóúñÑ])", "cucharada", text)
+    text = re.sub(r"\bc(?=\s+de\b|\s+[A-Za-zÁÉÍÓÚáéíóúñÑ])", "cucharadita", text)
+    text = re.sub(r"\bt(?=\s+de\b|\s+[A-Za-zÁÉÍÓÚáéíóúñÑ])", "taza", text)
+    text = _normalize_common_units_es(text)
+    text = text.replace(" de taza", " taza de")
+    text = re.sub(r"\bcucharadita\s+([A-Za-zÁÉÍÓÚáéíóúñÑ])", r"cucharadita de \1", text)
+    text = re.sub(r"\bcucharada\s+([A-Za-zÁÉÍÓÚáéíóúñÑ])", r"cucharada de \1", text)
+    text = re.sub(r"\bde\s+de\b", "de", text)
+    return normalize_text(text).rstrip(".")
+
+
+def protect_temperatures(text: str) -> tuple[str, dict[str, str]]:
+    replacements: dict[str, str] = {}
+
+    def repl(match: re.Match[str]) -> str:
+        token = f"__TEMP_{len(replacements)}__"
+        replacements[token] = match.group(0)
+        return token
+
+    protected = re.sub(r"\b\d{2,3}\s*(?:grados\s*)?[CF]\b", repl, text, flags=re.IGNORECASE)
+    return protected, replacements
+
+
+def restore_temperatures(text: str, replacements: dict[str, str]) -> str:
+    for token, original in replacements.items():
+        text = text.replace(token, original)
+    return text
+
+
+def normalize_instruction_spanish(text: str) -> str:
+    protected, replacements = protect_temperatures(text)
+    protected = re.sub(r"\bC\.(?=\s|$)", "cucharada", protected)
+    protected = re.sub(r"\bc\.(?=\s|$)", "cucharadita", protected)
+    protected = re.sub(r"\bt\.(?=\s|$)", "taza", protected)
+    protected = re.sub(r"\bC(?=\s+de\b|\s+[A-Za-zÁÉÍÓÚáéíóúñÑ])", "cucharada", protected)
+    protected = re.sub(r"\bc(?=\s+de\b|\s+[A-Za-zÁÉÍÓÚáéíóúñÑ])", "cucharadita", protected)
+    protected = re.sub(r"\bt(?=\s+de\b|\s+[A-Za-zÁÉÍÓÚáéíóúñÑ])", "taza", protected)
+    protected = _normalize_common_units_es(protected)
+    protected = protected.replace(" de taza", " taza de")
+    protected = re.sub(r"\bde\s+de\b", "de", protected)
+    protected = restore_temperatures(protected, replacements)
+    text = protected
     return normalize_text(text)
 
 
@@ -365,7 +818,36 @@ def split_ingredient_chunks(line: str) -> list[str]:
             cleaned.extend(sub)
         else:
             cleaned.append(part)
-    return [normalize_text(c) for c in cleaned if normalize_text(c)]
+    return [normalize_ingredient_spanish(c) for c in cleaned if normalize_ingredient_spanish(c)]
+
+
+def split_leading_ingredient_sentence(line: str) -> tuple[str | None, str | None]:
+    compact = normalize_text(line)
+    if not RE_AMOUNT.match(compact):
+        return None, None
+
+    parts = re.split(r"(?<=[.!?])\s+", compact, maxsplit=1)
+    first = normalize_ingredient_spanish(parts[0].rstrip(".")) if parts else ""
+    remainder = normalize_instruction_spanish(parts[1]) if len(parts) > 1 else None
+    if not first:
+        return None, remainder
+    return first, remainder
+
+
+def split_instruction_sentences_es(line: str) -> list[str]:
+    text = normalize_instruction_spanish(line)
+    text = text.replace(";", ". ")
+    text = re.sub(r"\s+", " ", text).strip()
+    parts = re.split(r"(?<=[.!?])\s+", text)
+    out = []
+    for part in parts:
+        clean = part.strip()
+        if not clean:
+            continue
+        if not RE_SENTENCE_END.search(clean):
+            clean += "."
+        out.append(clean)
+    return out if out else [text]
 
 
 def split_ingredients_instructions(lines: list[str]) -> tuple[list[str], list[str]]:
@@ -376,8 +858,22 @@ def split_ingredients_instructions(lines: list[str]) -> tuple[list[str], list[st
         line = raw_line.strip()
         if not line:
             continue
+
+        if RE_SPLIT_COLS.search(raw_line):
+            chunks = split_ingredient_chunks(line)
+            if chunks:
+                ingredients.extend(chunks)
+                continue
+
+        leading_ingredient, remainder = split_leading_ingredient_sentence(line)
+        if leading_ingredient:
+            ingredients.append(leading_ingredient)
+            if remainder:
+                instructions.extend(split_instruction_sentences_es(remainder))
+            continue
+
         if looks_like_instruction(line):
-            instructions.append(expand_abbreviations_es(line))
+            instructions.extend(split_instruction_sentences_es(line))
             continue
 
         chunks = split_ingredient_chunks(line)
@@ -388,18 +884,18 @@ def split_ingredients_instructions(lines: list[str]) -> tuple[list[str], list[st
         if any(RE_AMOUNT.search(c) for c in chunks) or all(len(c.split()) <= 7 for c in chunks):
             ingredients.extend(chunks)
         else:
-            instructions.append(expand_abbreviations_es(line))
+            instructions.extend(split_instruction_sentences_es(line))
 
-    if not instructions and ingredients:
-        # Safety fallback when source block is very compact.
-        tail = ingredients[-2:]
-        ingredients = ingredients[:-2]
-        instructions = [f"Preparar la receta siguiendo el metodo habitual con la freidora de aire: {x}." for x in tail]
+    if not instructions and lines:
+        # Do not hallucinate instructions, preserve source wording when structure is ambiguous.
+        merged = " ".join(normalize_instruction_spanish(x) for x in lines if x.strip())
+        if merged:
+            instructions = [merged]
 
     if not ingredients:
-        ingredients = ["Revisar la fuente para confirmar ingredientes exactos."]
+        ingredients = ["Sin ingredientes claros en la fuente original."]
     if not instructions:
-        instructions = ["Preparar en freidora de aire segun el punto de coccion deseado."]
+        instructions = ["Sin instrucciones claras en la fuente original."]
 
     return dedupe_preserve_order(ingredients), dedupe_preserve_order(instructions)
 
@@ -420,8 +916,14 @@ def translate_es_to_en(text: str) -> str:
     base = normalize_text(text)
     low = strip_accents(base.lower())
 
+    for es, en in sorted(INSTRUCTION_PHRASE_REPLACEMENTS_EN.items(), key=lambda kv: len(kv[0]), reverse=True):
+        low = re.sub(rf"\b{re.escape(strip_accents(es))}\b", en, low)
+
     for es, en in sorted(PHRASE_REPLACEMENTS.items(), key=lambda kv: len(kv[0]), reverse=True):
         low = low.replace(strip_accents(es), en)
+
+    for es, en in sorted(INSTRUCTION_WORD_REPLACEMENTS_EN.items(), key=lambda kv: len(kv[0]), reverse=True):
+        low = re.sub(rf"\b{re.escape(strip_accents(es))}\b", en, low)
 
     # Light grammar cleanup.
     low = re.sub(r"\bde\b", "of", low)
@@ -429,14 +931,16 @@ def translate_es_to_en(text: str) -> str:
     low = re.sub(r"\by\b", "and", low)
     low = re.sub(r"\bo\b", "or", low)
     low = re.sub(r"\bpara\b", "for", low)
+    low = re.sub(r"\ben\b", "in", low)
+    low = re.sub(r"\bpor\b", "for", low)
+    low = re.sub(r"\bal\b", "to the", low)
+    low = re.sub(r"\bdel\b", "of the", low)
+    low = re.sub(r"\ba\s+(\d+\s*degrees\s*[cf])\b", r"at \1", low)
+    low = re.sub(r"\s+", " ", low)
+    low = low.replace("of of", "of")
 
     for es_unit, en_unit in UNIT_REPLACEMENTS_EN.items():
         low = re.sub(rf"\b{es_unit}\b", en_unit, low)
-
-    # If too much unresolved Spanish remains, force a clean conversational fallback.
-    spanish_hits = len(RE_SPANISH_STOP.findall(low))
-    if spanish_hits >= 5:
-        return "Follow the same preparation flow: combine ingredients, preheat the air fryer, cook until done, and turn halfway when needed."
 
     low = re.sub(r"\s+", " ", low).strip()
     if not low:
@@ -448,10 +952,113 @@ def translate_es_to_en(text: str) -> str:
     return low
 
 
-def summarize_recipe(title_en: str, title_es: str, ingredients_es: list[str]) -> tuple[str, str]:
-    en = f"{title_en} is an air fryer recipe with clear, conversational steps and practical home-kitchen ingredients."
-    es = f"{title_es} es una receta en freidora de aire con pasos claros, en tono casero y facil de seguir."
+def summarize_recipe(title_en: str, title_es: str, ingredients_es: list[str], instructions_es: list[str]) -> tuple[str, str]:
+    en = f"{title_en} is a home-style air fryer recipe with clear steps and practical ingredients for everyday cooking."
+
+    ks1 = ingredient_keyword_es(ingredients_es[0]) if ingredients_es else "ingredientes de casa"
+    ks2 = ingredient_keyword_es(ingredients_es[1]) if len(ingredients_es) > 1 else "sazon simple"
+    es = f"{title_es} es una receta casera en freidora de aire hecha con {ks1} y {ks2}."
     return en, es
+
+
+def ingredient_keyword_es(line: str) -> str:
+    text = normalize_text(line).lower()
+    text = re.sub(r"\b\d+[\d/.,]*\b", "", text)
+    text = re.sub(r"\b(cucharada|cucharadita|taza|gramos|mililitros|litro|litros|onzas|libras)\b", "", text)
+    words = [w for w in re.findall(r"[a-záéíóúñ]+", text) if w not in STOP_WORDS_ES]
+    if not words:
+        return "ingredientes caseros"
+    return " ".join(words[:3])
+
+
+def ingredient_keyword_en(line: str) -> str:
+    translated = translate_ingredient_line_en(line).rstrip(".")
+    words = [
+        w
+        for w in re.findall(r"[a-z]+", translated.lower())
+        if w not in {
+            "of", "and", "or", "with", "to", "the", "a", "an",
+            "cup", "cups", "tbsp", "tsp", "g", "ml", "oz", "lb",
+            "large", "medium", "small", "cooked", "chopped", "grated",
+            "ground", "green", "sweet", "optional", "your", "choice",
+            "spray", "taste", "for", "white", "thick", "neutral",
+            "cooking", "can", "juice", "breading",
+        }
+    ]
+    if not words:
+        return "everyday ingredients"
+    return " ".join(words[:2])
+
+
+def translate_spanish_phrase(text: str) -> str:
+    out = strip_accents(normalize_text(text).lower())
+
+    for unit_es, unit_en in UNIT_MAP_EN.items():
+        out = re.sub(rf"\b{unit_es}\b", unit_en, out)
+
+    for es, en in sorted(TERM_REPLACEMENTS_EN.items(), key=lambda kv: len(kv[0]), reverse=True):
+        out = re.sub(rf"\b{re.escape(strip_accents(es))}\b", en, out)
+
+    out = re.sub(r"\s+", " ", out).strip(" ,.;")
+    return out
+
+
+def translate_ingredient_line_en(es_line: str) -> str:
+    out = translate_spanish_phrase(es_line)
+    out = re.sub(r"\bde\b", "of", out)
+    out = re.sub(r"\bcon\b", "with", out)
+    out = re.sub(r"\by\b", "and", out)
+    out = re.sub(r"\bo\b", "or", out)
+    out = re.sub(r"\bpara\b", "for", out)
+    out = re.sub(r"\bal gusto\b", "to taste", out)
+    out = re.sub(r"\s+", " ", out).strip(" ,.;")
+    out = out.replace("of of", "of")
+    out = out.replace(" or el ", " or ").replace(" or la ", " or ").replace(" or las ", " or ")
+    out = out.replace(" for la salsa", " for the sauce")
+    out = out.replace(" for el ", " for ")
+    out = out.replace(" en ", " ")
+    out = out.replace("tomato large", "large tomato")
+    out = out.replace("bell pepper red", "red bell pepper")
+    out = out.replace("bell pepper green", "green bell pepper")
+    out = out.replace("onion white", "white onion")
+    out = out.replace("avocado ripe", "ripe avocado")
+    out = out.replace("lettuce thin strips", "thin lettuce strips")
+    out = out.replace("rolls of sandwich", "sandwich rolls")
+    out = out.replace("broth of chicken", "chicken broth")
+    out = out.replace("cheese crema", "cream cheese")
+    out = out.replace("butter fria diced", "cold butter, diced")
+    out = out.replace("For the sauce:.", "For the sauce:")
+    out = out.replace("or of coco", "or coconut")
+    out = out.replace("  ", " ")
+    if out.lower().startswith("para la salsa"):
+        out = "For the sauce"
+    if not out:
+        return fallback_ingredient_en(es_line)
+    out = out[0].upper() + out[1:]
+    if not out.endswith("."):
+        out += "."
+    return out
+
+
+def clean_amount_token(token: str) -> str:
+    t = token.strip()
+    t = t.replace("½", "1/2").replace("¼", "1/4").replace("¾", "3/4")
+    t = t.replace("⅓", "1/3").replace("⅔", "2/3")
+    t = t.replace("⁄", "/")
+    return t
+
+
+def contains_spanish_markers(text: str) -> bool:
+    words = re.findall(r"[a-z]+", strip_accents(text.lower()))
+    return any(w in SPANISH_MARKERS for w in words)
+
+
+def normalize_qty_to_en(qty: str) -> str:
+    q = strip_accents(clean_amount_token(qty).lower())
+    for es_unit, en_unit in UNIT_MAP_EN.items():
+        q = re.sub(rf"\b{es_unit}\b", en_unit, q)
+    q = re.sub(r"\s+", " ", q).strip()
+    return q
 
 
 def spanish_marker_ratio(text: str) -> float:
@@ -464,30 +1071,106 @@ def spanish_marker_ratio(text: str) -> float:
 
 def fallback_instruction_en(es_line: str) -> str:
     low = strip_accents(es_line.lower())
+    minute_match = re.search(r"(\d+\s*(?:a\s*\d+\s*)?minutos?)", low)
+    temp_match = re.search(r"(\d+\s*grados\s*[cf])", low)
+    if minute_match:
+        raw_time = minute_match.group(1).replace(" a ", "-")
+        raw_time = raw_time.replace("minutos", "minutes").replace("minuto", "minute")
+        time_hint = f" for about {raw_time}"
+    else:
+        time_hint = ""
+    temp_hint = ""
+    if temp_match:
+        temp_hint = f" at about {temp_match.group(1).replace('grados', 'degrees').upper()}"
+
+    if any(k in low for k in ("dora", "sellar")):
+        return f"Brown the protein{time_hint} until it develops color and aroma.".replace("  ", " ")
+    if any(k in low for k in ("sofrie", "saltea")):
+        return f"Saute the aromatics{time_hint} until softened and fragrant.".replace("  ", " ")
+    if any(k in low for k in ("tuesta", "activar el aroma")):
+        return f"Toast the spices briefly{time_hint} to develop deeper flavor.".replace("  ", " ")
+
     if "precalentar" in low:
-        return "Preheat the air fryer to the listed temperature before starting the step."
+        return f"Preheat to the target temperature{temp_hint if temp_hint else ''} before starting this step.".replace("  ", " ")
+    if any(k in low for k in ("reemplazar", "vegetar")):
+        return "For a vegetarian variation, swap the protein and keep the same timing and texture targets."
+    if any(k in low for k in ("agrega", "agregar", "anade", "añade", "incorpora")):
+        return f"Add the next ingredients and combine well{time_hint} so everything cooks evenly.".replace("  ", " ")
+    if any(k in low for k in ("hierve", "hervor")):
+        return f"Bring to a gentle boil{time_hint}, then lower the heat to continue cooking.".replace("  ", " ")
+    if any(k in low for k in ("baja a fuego", "fuego medio", "fuego bajo")):
+        return f"Lower the heat and continue cooking{time_hint}, stirring as needed.".replace("  ", " ")
+    if any(k in low for k in ("reposar", "dejar")):
+        return f"Let it rest{time_hint if time_hint else ' for a few minutes'} so flavors settle before serving.".replace("  ", " ")
     if any(k in low for k in ("mezclar", "batir", "remover")):
-        return "Mix the ingredients well in a bowl until the texture is even."
+        return "Mix everything well in a bowl until the texture is even and fully combined."
     if any(k in low for k in ("cortar", "picar", "rallar")):
-        return "Cut and prep the ingredients into uniform pieces for even cooking."
+        return "Cut and prep the ingredients into uniform pieces so they cook evenly."
     if any(k in low for k in ("cocinar", "hornear", "freidora")):
-        return "Cook in the air fryer until fully done, and flip halfway when needed."
+        return f"Cook{temp_hint}{time_hint} until fully done, flipping halfway if needed.".replace("  ", " ")
+    if any(k in low for k in ("retira", "saca")):
+        return "Remove from heat and set aside briefly before the next step."
     if any(k in low for k in ("servir", "acompanar", "acompa")):
-        return "Serve warm and pair with your preferred garnish or side."
-    return "Follow this step in order, keeping the same temperature and timing from the original recipe."
+        return "Serve warm and finish with your preferred garnish or side."
+    if time_hint or temp_hint:
+        return f"Follow this step{temp_hint}{time_hint}, watching texture and doneness as you go.".replace("  ", " ")
+    return "Follow this step in sequence, keeping texture and doneness cues in mind."
 
 
 def fallback_ingredient_en(es_line: str) -> str:
-    amount = RE_AMOUNT.search(es_line)
-    qty = amount.group(0) if amount else "The listed amount"
-    return f"{qty} of the ingredient noted in the original recipe."
+    line = normalize_ingredient_spanish(es_line)
+    low = strip_accents(line.lower())
+
+    if "sal y pimienta" in low:
+        return "Salt and pepper to taste."
+
+    amount = RE_AMOUNT.search(low)
+    qty = normalize_qty_to_en(amount.group(0)) if amount else ""
+
+    terms = []
+    for es, en in sorted(TERM_REPLACEMENTS_EN.items(), key=lambda kv: len(kv[0]), reverse=True):
+        key = strip_accents(es)
+        if re.search(rf"\b{re.escape(key)}\b", low) and en not in terms:
+            terms.append(en)
+    terms = [t for t in terms if t not in {"air fryer", "mix"}]
+
+    detail = ""
+    if "diced" in terms:
+        terms = [t for t in terms if t != "diced"]
+        detail = "diced"
+    elif "chopped" in terms:
+        terms = [t for t in terms if t != "chopped"]
+        detail = "chopped"
+    elif "powder" in terms:
+        terms = [t for t in terms if t != "powder"]
+        detail = "powder"
+
+    core = ""
+    if terms:
+        core = " and ".join(terms[:2])
+    else:
+        core = "ingredient from source"
+
+    phrase = f"{qty} {core}".strip() if qty else core
+    if detail:
+        phrase = f"{phrase}, {detail}"
+
+    phrase = re.sub(r"\s+", " ", phrase).strip(" ,.;")
+    phrase = phrase[0].upper() + phrase[1:] if phrase else "Listed ingredient"
+    if not phrase.endswith("."):
+        phrase += "."
+    return phrase
 
 
 def sanitize_english(es_line: str, translated_en: str, kind: str) -> str:
     words = re.findall(r"[a-zA-Z]+", strip_accents(translated_en.lower()))
     hits = sum(1 for w in words if w in SPANISH_MARKERS)
     ratio = spanish_marker_ratio(translated_en)
-    if hits >= 1 or ratio >= 0.08:
+    if kind == "instruction" and (hits >= 1 or ratio >= 0.05):
+        return fallback_instruction_en(es_line)
+    if kind == "ingredient" and (hits >= 1 or ratio >= 0.08):
+        return fallback_ingredient_en(es_line)
+    if kind not in {"instruction", "ingredient"} and (hits >= 1 or ratio >= 0.08):
         if kind == "instruction":
             return fallback_instruction_en(es_line)
         return fallback_ingredient_en(es_line)
@@ -496,17 +1179,29 @@ def sanitize_english(es_line: str, translated_en: str, kind: str) -> str:
 
 def build_recipe_payload(recipe: dict) -> dict:
     if "ingredients_es" in recipe and "instructions_es" in recipe:
-        ingredients_es = [expand_abbreviations_es(x) for x in recipe["ingredients_es"]]
-        instructions_es = [expand_abbreviations_es(x) for x in recipe["instructions_es"]]
+        ingredients_es = [normalize_ingredient_spanish(x) for x in recipe["ingredients_es"]]
+        instructions_es = []
+        for step in recipe["instructions_es"]:
+            instructions_es.extend(split_instruction_sentences_es(step))
     else:
         ingredients_es, instructions_es = split_ingredients_instructions(recipe["lines"])
+
+    override_ingredients = MANUAL_INGREDIENT_OVERRIDES_ES.get(recipe["heading"])
+    if override_ingredients:
+        should_override = ingredients_es == ["Sin ingredientes claros en la fuente original."]
+        if len(ingredients_es) == 1 and len(ingredients_es[0].split()) >= 10 and looks_like_instruction(ingredients_es[0]):
+            should_override = True
+        if should_override:
+            ingredients_es = override_ingredients
 
     title_es = recipe.get("title_es", recipe["heading"].title())
     title_en = recipe.get("title_en", english_title_from_spanish(recipe["heading"]))
 
     summary_en, summary_es = recipe.get("summary_en"), recipe.get("summary_es")
     if not summary_en or not summary_es:
-        summary_en, summary_es = summarize_recipe(title_en, title_es, ingredients_es)
+        summary_en, summary_es = summarize_recipe(title_en, title_es, ingredients_es, instructions_es)
+
+    summary_en = SUMMARY_OVERRIDES_EN.get(recipe["heading"], summary_en)
 
     payload = {
         "filename": recipe["filename"],
@@ -516,7 +1211,7 @@ def build_recipe_payload(recipe: dict) -> dict:
         "title_es": title_es,
         "summary_en": summary_en,
         "summary_es": summary_es,
-        "ingredients_en": [fallback_ingredient_en(x) for x in ingredients_es],
+        "ingredients_en": [sanitize_english(x, translate_ingredient_line_en(x), "ingredient") for x in ingredients_es],
         "ingredients_es": ingredients_es,
         "instructions_en": [fallback_instruction_en(x) for x in instructions_es],
         "instructions_es": instructions_es,
@@ -630,9 +1325,15 @@ def build_index(payloads: list[dict]) -> str:
         "        <span class=\"badge\" data-i18n=\"Tuti and Lobo recipes\" data-i18n-es=\"Recetas de Tuti y Lobo\">Tuti and Lobo recipes</span>",
         "      </div>",
         "      <p class=\"summary\" data-i18n=\"Every recipe includes cleaned ingredients, clear instructions, owner labels, and concise summaries.\" data-i18n-es=\"Cada receta incluye ingredientes ordenados, instrucciones claras, etiqueta de autor y resumen breve.\">Every recipe includes cleaned ingredients, clear instructions, owner labels, and concise summaries.</p>",
-        "      <div class=\"search-bar\">",
-        "        <input id=\"recipe-search\" type=\"search\" data-i18n-placeholder=\"Search recipes by title, category, owner, or ingredient\" data-i18n-placeholder-es=\"Buscar por titulo, categoria, autor o ingrediente\" placeholder=\"Search recipes by title, category, owner, or ingredient\" />",
-        "      </div>",
+        "      <form id=\"recipe-search-form\" class=\"search-bar\" role=\"search\">",
+        "        <label class=\"search-label\" for=\"recipe-search\" data-i18n=\"Search recipes\" data-i18n-es=\"Buscar recetas\">Search recipes</label>",
+        "        <div class=\"search-controls\">",
+        "          <input id=\"recipe-search\" type=\"search\" data-i18n-placeholder=\"Search recipes by title, category, owner, or ingredient\" data-i18n-placeholder-es=\"Buscar por titulo, categoria, autor o ingrediente\" placeholder=\"Search recipes by title, category, owner, or ingredient\" />",
+        "          <button id=\"recipe-search-button\" class=\"search-button\" type=\"submit\" data-i18n=\"Search\" data-i18n-es=\"Buscar\">Search</button>",
+        "          <button id=\"recipe-search-clear\" class=\"search-clear\" type=\"button\" data-i18n=\"Clear\" data-i18n-es=\"Limpiar\" hidden>Clear</button>",
+        "        </div>",
+        "        <p id=\"search-results-status\" class=\"search-results-status\" data-i18n=\"Loading results...\" data-i18n-es=\"Cargando resultados...\">Loading results...</p>",
+        "      </form>",
         "      <div id=\"no-results\" class=\"no-results\" data-i18n=\"No recipes match that search.\" data-i18n-es=\"No hay recetas que coincidan con esa busqueda.\" style=\"display:none;\">No recipes match that search.</div>",
         "    </div>",
     ]
@@ -659,7 +1360,7 @@ def build_index(payloads: list[dict]) -> str:
             owner_es = f"Receta de {owner}"
             card_class = "recipe-card recipe-card-tuti" if owner == "Tuti" else "recipe-card"
             lines.extend([
-                f"        <a class=\"{card_class}\" href=\"{quote(payload['filename'])}\" data-title=\"{quote(payload['title_en'])}\" data-description=\"{quote(payload['summary_en'])}\" data-category=\"{quote(label_en)}\" data-owner=\"{quote(owner)}\">",
+                f"        <a class=\"{card_class}\" href=\"{quote(payload['filename'])}\" data-title=\"{quote(payload['title_en'])}\" data-title-es=\"{quote(payload['title_es'])}\" data-description=\"{quote(payload['summary_en'])}\" data-description-es=\"{quote(payload['summary_es'])}\" data-category=\"{quote(label_en)}\" data-category-es=\"{quote(label_es)}\" data-owner=\"{quote(owner)}\">",
                 "          <div class=\"section-title\">",
                 f"            <span data-i18n=\"{quote(payload['title_en'])}\" data-i18n-es=\"{quote(payload['title_es'])}\">{quote(payload['title_en'])}</span>",
                 "          </div>",
@@ -667,7 +1368,6 @@ def build_index(payloads: list[dict]) -> str:
                 f"            <span class=\"recipe-badge\" data-i18n=\"{quote(label_en)}\" data-i18n-es=\"{quote(label_es)}\">{quote(label_en)}</span>",
                 f"            <span class=\"recipe-badge owner-badge\" data-i18n=\"{quote(owner_en)}\" data-i18n-es=\"{quote(owner_es)}\">{quote(owner_en)}</span>",
                 "          </div>",
-                f"          <p class=\"recipe-description\" data-i18n=\"{quote(payload['summary_en'])}\" data-i18n-es=\"{quote(payload['summary_es'])}\">{quote(payload['summary_en'])}</p>",
                 "        </a>",
             ])
 
@@ -694,6 +1394,8 @@ def main() -> None:
     payloads = [build_recipe_payload(r) for r in all_recipes]
 
     for payload in payloads:
+        if payload["filename"] in LOCKED_RECIPE_FILES and (OUTPUT_DIR / payload["filename"]).exists():
+            continue
         html_page = render_recipe_page(payload)
         (OUTPUT_DIR / payload["filename"]).write_text(html_page, encoding="utf-8")
 

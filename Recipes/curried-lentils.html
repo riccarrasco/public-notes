@@ -8,48 +8,125 @@
   <script src="lang-switcher.js" defer></script>
 </head>
 <body data-page="curried-lentils">
-  <article class="page">
-    <div class="hero">
-      <div class="language-switcher">
-        <label data-i18n="Language" data-i18n-es="Idioma">Language</label>
-        <select id="language-select">
-          <option value="en">English</option>
-          <option value="es">Español</option>
-        </select>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-i18n="Curried Beef, Lentils & Kale Stew" data-i18n-es="Guiso picante de carne, lentejas y col rizada">Curried Beef, Lentils & Kale Stew</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="lang-switcher.js" defer></script>
+  </head>
+  <body data-page="curried-lentils">
+    <article class="page">
+      <div class="hero">
+        <div class="language-switcher">
+          <label data-i18n="Language" data-i18n-es="Idioma">Language</label>
+          <select id="language-select">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+          </select>
+        </div>
+        <a class="back-link" href="index.html" data-i18n="Back to recipes" data-i18n-es="Volver a recetas">Back to recipes</a>
+        <h1 data-i18n="Curried Beef, Lentils & Kale Stew" data-i18n-es="Guiso de carne, lentejas y col rizada con curry">Curried Beef, Lentils & Kale Stew</h1>
+        <div class="meta">
+          <span class="badge" data-i18n="4 servings" data-i18n-es="4 porciones">4 servings</span>
+          <span class="badge" data-i18n="High protein" data-i18n-es="Alto en proteínas">High protein</span>
+          <span class="badge" data-i18n="Low carb" data-i18n-es="Bajo en carbohidratos">Low carb</span>
+        </div>
+        <p class="summary" data-i18n="A Michelin-inspired one-pot stew built with beef, soaked lentils, kale, and warming curry spices. It’s designed to be deeply savory, nourishing, and easy to follow on a phone while cooking." data-i18n-es="Un guiso de una sola olla inspirado en la cocina Michelin, hecho con carne de res, lentejas remojadas, col rizada y especias de curry. Está pensado para ser sabroso, nutritivo y fácil de seguir desde el celular mientras cocinas.">A Michelin-inspired one-pot stew built with beef, soaked lentils, kale, and warming curry spices. It’s designed to be deeply savory, nourishing, and easy to follow on a phone while cooking.</p>
       </div>
-      <a class="back-link" href="index.html" data-i18n="Back to recipes" data-i18n-es="Volver a recetas">Back to recipes</a>
-      <h1 data-i18n="Curried Beef, Lentils and Kale Stew" data-i18n-es="Guiso de carne, lentejas y kale al curry">Curried Beef, Lentils and Kale Stew</h1>
-      <div class="meta">
-        <span class="badge" data-i18n="Air fryer recipe" data-i18n-es="Receta en freidora de aire">Air fryer recipe</span>
-        <span class="badge owner-badge" data-i18n="Lobo's recipe" data-i18n-es="Receta de Lobo">Lobo's recipe</span>
+
+      <div class="grid">
+        <section class="card">
+          <div class="section-title" data-i18n="Ingredients" data-i18n-es="Ingredientes">Ingredients</div>
+          <div class="row">
+            <div>
+              <h3 data-i18n="Protein & legumes" data-i18n-es="Proteína y legumbres">Protein & legumes</h3>
+              <ul>
+                <li data-i18n="1 lb ground beef (85/15 for flavor)" data-i18n-es="450 g de carne molida (85/15 para más sabor)">1 lb ground beef (85/15 for flavor)</li>
+                <li data-i18n="1 cup green lentils, soaked 4 hours" data-i18n-es="1 taza de lentejas verdes, remojadas 4 horas">1 cup green lentils, soaked 4 hours</li>
+                <li data-i18n="1 cup cooked chickpeas (optional)" data-i18n-es="1 taza de garbanzos cocidos (opcional)">1 cup cooked chickpeas (optional)</li>
+              </ul>
+            </div>
+            <div>
+              <h3 data-i18n="Vegetables" data-i18n-es="Verduras">Vegetables</h3>
+              <ul>
+                <li data-i18n="1 large yellow onion, diced" data-i18n-es="1 cebolla amarilla grande, picada">1 large yellow onion, diced</li>
+                <li data-i18n="3 cloves garlic, minced" data-i18n-es="3 dientes de ajo, picados">3 cloves garlic, minced</li>
+                <li data-i18n="1 inch ginger, grated" data-i18n-es="2.5 cm de jengibre, rallado">1 inch ginger, grated</li>
+                <li data-i18n="1 carrot, diced" data-i18n-es="1 zanahoria, picada">1 carrot, diced</li>
+                <li data-i18n="1 red bell pepper, diced" data-i18n-es="1 pimiento rojo, picado">1 red bell pepper, diced</li>
+                <li data-i18n="1–2 cups chopped kale (stems removed)" data-i18n-es="1–2 tazas de col rizada picada (sin tallos)">1–2 cups chopped kale (stems removed)</li>
+                <li data-i18n="1 cup diced tomatoes" data-i18n-es="1 taza de tomates en cubos">1 cup diced tomatoes</li>
+                <li data-i18n="2 medium potatoes, cubed (optional)" data-i18n-es="2 papas medianas, en cubos (opcional)">2 medium potatoes, cubed (optional)</li>
+              </ul>
+            </div>
+            <div>
+              <h3 data-i18n="Spices & liquids" data-i18n-es="Especias y líquidos">Spices & liquids</h3>
+              <ul>
+                <li data-i18n="1½ tsp curry powder" data-i18n-es="1½ cucharadita de curry en polvo">1½ tsp curry powder</li>
+                <li data-i18n="1 tsp ground cumin" data-i18n-es="1 cucharadita de comino molido">1 tsp ground cumin</li>
+                <li data-i18n="1 tsp ground coriander" data-i18n-es="1 cucharadita de cilantro molido">1 tsp ground coriander</li>
+                <li data-i18n="½ tsp turmeric" data-i18n-es="½ cucharadita de cúrcuma">½ tsp turmeric</li>
+                <li data-i18n="½ tsp smoked paprika" data-i18n-es="½ cucharadita de pimentón ahumado">½ tsp smoked paprika</li>
+                <li data-i18n="½ tsp garam masala" data-i18n-es="½ cucharadita de garam masala">½ tsp garam masala</li>
+                <li data-i18n="¼ tsp cayenne (optional)" data-i18n-es="¼ cucharadita de cayena (opcional)">¼ tsp cayenne (optional)</li>
+                <li data-i18n="4 cups beef or vegetable broth" data-i18n-es="4 tazas de caldo de carne o vegetales">4 cups beef or vegetable broth</li>
+                <li data-i18n="1 tbsp tomato paste" data-i18n-es="1 cucharada de pasta de tomate">1 tbsp tomato paste</li>
+                <li data-i18n="½ cup coconut milk" data-i18n-es="½ taza de leche de coco">½ cup coconut milk</li>
+                <li data-i18n="Juice of ½ lemon" data-i18n-es="Jugo de ½ limón">Juice of ½ lemon</li>
+                <li data-i18n="1 tbsp olive oil" data-i18n-es="1 cucharada de aceite de oliva">1 tbsp olive oil</li>
+                <li data-i18n="Salt and black pepper" data-i18n-es="Sal y pimienta negra">Salt and black pepper</li>
+                <li data-i18n="Fresh cilantro or parsley" data-i18n-es="Cilantro o perejil fresco">Fresh cilantro or parsley</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="section-title" data-i18n="Step-by-step instructions" data-i18n-es="Instrucciones paso a paso">Step-by-step instructions</div>
+          <ol>
+            <li data-i18n="Prep first: Dice vegetables, rinse lentils, and chop kale. Keep kale in cold water until later." data-i18n-es="Preparar primero: Pica las verduras, enjuaga las lentejas y corta la col rizada. Mantén la col en agua fría hasta más tarde.">Prep first: Dice vegetables, rinse lentils, and chop kale. Keep kale in cold water until later.</li>
+            <li data-i18n="Brown the beef: Heat oil in a large pot over medium-high heat. Add beef and let it brown without stirring for 2 minutes, then break it apart and cook until deep brown." data-i18n-es="Dora la carne: Calienta el aceite en una olla grande a fuego medio-alto. Agrega la carne y deja que se dore sin revolver durante 2 minutos, luego rompe y cocina hasta que esté bien dorada.">Brown the beef: Heat oil in a large pot over medium-high heat. Add beef and let it brown without stirring for 2 minutes, then break it apart and cook until deep brown.</li>
+            <li data-i18n="Build the base: Add onion, carrot, and bell pepper. Cook 6–8 minutes until caramelized. Stir in garlic and ginger, cook 1 minute." data-i18n-es="Prepara la base: agrega cebolla, zanahoria y pimiento. Cocina 6–8 minutos hasta que empiecen a caramelizar. Incorpora ajo y jengibre y cocina 1 minuto.">Build the base: Add onion, carrot, and bell pepper. Cook 6–8 minutes until caramelized. Stir in garlic and ginger, cook 1 minute.</li>
+            <li data-i18n="Bloom the spices: Add curry powder, cumin, coriander, turmeric, paprika, and cayenne. Toast for 30–45 seconds until fragrant." data-i18n-es="Activa las especias: Agrega curry, comino, cilantro, cúrcuma, pimentón y cayena. Tuesta 30–45 segundos hasta que suelten aroma.">Bloom the spices: Add curry powder, cumin, coriander, turmeric, paprika, and cayenne. Toast for 30–45 seconds until fragrant.</li>
+            <li data-i18n="Add tomatoes & broth: Stir in tomato paste, diced tomatoes, soaked lentils, and broth. Bring to a gentle boil, then reduce to a simmer." data-i18n-es="Agrega tomates y caldo: Incorpora pasta de tomate, tomates en cubos, lentejas remojadas y caldo. Lleva a un hervor suave, luego reduce a fuego lento.">Add tomatoes & broth: Stir in tomato paste, diced tomatoes, soaked lentils, and broth. Bring to a gentle boil, then reduce to a simmer.</li>
+            <li data-i18n="Simmer: Cook 25–30 minutes until lentils are tender and stew is thickening." data-i18n-es="Cocina a fuego lento: Cocina 25–30 minutos hasta que las lentejas estén tiernas y el guiso espese.">Simmer: Cook 25–30 minutes until lentils are tender and stew is thickening.</li>
+            <li data-i18n="Add greens: Stir in chickpeas (if using) and kale. Simmer 5–7 minutes until kale softens." data-i18n-es="Agrega las verduras: Incorpora los garbanzos (si usas) y la col rizada. Cocina 5–7 minutos hasta que la col se ablande.">Add greens: Stir in chickpeas (if using) and kale. Simmer 5–7 minutes until kale softens.</li>
+            <li data-i18n="Finish: Add coconut milk, lemon juice, salt, and pepper. Sprinkle fresh cilantro on top and serve warm." data-i18n-es="Finaliza: Agrega leche de coco, jugo de limón, sal y pimienta. Espolvorea cilantro fresco por encima y sirve caliente.">Finish: Add coconut milk, lemon juice, salt, and pepper. Sprinkle fresh cilantro on top and serve warm.</li>
+          </ol>
+        </section>
+
+        <section class="card highlight">
+          <div class="section-title" data-i18n="High-protein, low-carb tips" data-i18n-es="Consejos altos en proteínas y bajos en carbohidratos">High-protein, low-carb tips</div>
+          <ul>
+            <li data-i18n="Use 85/15 beef for more richness with fewer carbs than added starches." data-i18n-es="Usa carne 85/15 para más riqueza y menos carbohidratos que los almidones añadidos.">Use 85/15 beef for more richness with fewer carbs than added starches.</li>
+            <li data-i18n="Skip potatoes and add extra kale or cauliflower rice for a lighter bowl." data-i18n-es="Omite las papas y agrega más col rizada o arroz de coliflor para un plato más ligero.">Skip potatoes and add extra kale or cauliflower rice for a lighter bowl.</li>
+            <li data-i18n="Serve over steamed greens, shredded cabbage, or a small side of cauliflower rice." data-i18n-es="Sirve sobre verduras al vapor, repollo rallado o una pequeña porción de arroz de coliflor.">Serve over steamed greens, shredded cabbage, or a small side of cauliflower rice.</li>
+          </ul>
+        </section>
+
+        <section class="card">
+          <div class="section-title" data-i18n="Chef’s notes" data-i18n-es="Notas del chef">Chef’s notes</div>
+          <div class="note">
+            <p data-i18n="Restaurant-style depth: Toast the spices in oil before adding tomatoes. This unlocks the full aroma and gives the stew a more complex finish." data-i18n-es="Profundidad de restaurante: dora las especias en aceite antes de agregar los tomates. Esto libera todo su aroma y le da al guiso un acabado más complejo.">Restaurant-style depth: Toast the spices in oil before adding tomatoes. This unlocks the full aroma and gives the stew a more complex finish.</p>
+            <p data-i18n="Thickness control: For a silkier texture, blend 1 cup of stew and return it to the pot. Add coconut milk last for creaminess without heaviness." data-i18n-es="Control de grosor: Para una textura más sedosa, licúa 1 taza de guiso y vuelve a mezclarla en la olla. Agrega la leche de coco al final para cremosidad sin pesadez.">Thickness control: For a silkier texture, blend 1 cup of stew and return it to the pot. Add coconut milk last for creaminess without heaviness.</p>
+            <p data-i18n="Resting advantage: Let the stew sit off heat for 10 minutes. The flavors settle and the lentils absorb the broth." data-i18n-es="Ventaja de reposo: Deja reposar el guiso fuera del fuego durante 10 minutos. Los sabores se asientan y las lentejas absorben el caldo.">Resting advantage: Let the stew sit off heat for 10 minutes. The flavors settle and the lentils absorb the broth.</p>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="section-title" data-i18n="Serving suggestions" data-i18n-es="Sugerencias para servir">Serving suggestions</div>
+          <ul>
+            <li data-i18n="Garnish with cilantro, lemon zest, and toasted pumpkin seeds." data-i18n-es="Adorna con cilantro, ralladura de limón y semillas de calabaza tostadas.">Garnish with cilantro, lemon zest, and toasted pumpkin seeds.</li>
+            <li data-i18n="Pair with naan, yogurt, or roasted cauliflower." data-i18n-es="Acompaña con naan, yogur o coliflor asada.">Pair with naan, yogurt, or roasted cauliflower.</li>
+            <li data-i18n="Top with a spoonful of Greek yogurt or coconut yogurt for richness." data-i18n-es="Corona con una cucharada de yogur griego o yogur de coco para más riqueza.">Top with a spoonful of Greek yogurt or coconut yogurt for richness.</li>
+          </ul>
+        </section>
       </div>
-      <p class="summary" data-i18n="This one-pot curry stew combines beef, lentils, and kale for a warm, protein-rich meal with deep flavor and simple prep." data-i18n-es="Este guiso al curry de una sola olla combina carne, lentejas y kale para una comida reconfortante, con mucha proteina y pasos simples.">This one-pot curry stew combines beef, lentils, and kale for a warm, protein-rich meal with deep flavor and simple prep.</p>
-    </div>
-    <div class="grid">
-      <section class="card">
-        <div class="section-title" data-i18n="Ingredients" data-i18n-es="Ingredientes">Ingredients</div>
-        <ul>
-          <li data-i18n="450 gramos of the ingredient noted in the original recipe." data-i18n-es="450 gramos de carne molida">450 gramos of the ingredient noted in the original recipe.</li>
-          <li data-i18n="1 taza of the ingredient noted in the original recipe." data-i18n-es="1 taza de lentejas verdes remojadas">1 taza of the ingredient noted in the original recipe.</li>
-          <li data-i18n="1  of the ingredient noted in the original recipe." data-i18n-es="1 cebolla mediana picada">1  of the ingredient noted in the original recipe.</li>
-          <li data-i18n="3  of the ingredient noted in the original recipe." data-i18n-es="3 dientes de ajo picados">3  of the ingredient noted in the original recipe.</li>
-          <li data-i18n="1 cucharadita of the ingredient noted in the original recipe." data-i18n-es="1 cucharadita de curry en polvo">1 cucharadita of the ingredient noted in the original recipe.</li>
-          <li data-i18n="4  of the ingredient noted in the original recipe." data-i18n-es="4 tazas de caldo de carne o verduras">4  of the ingredient noted in the original recipe.</li>
-          <li data-i18n="1 taza of the ingredient noted in the original recipe." data-i18n-es="1 taza de kale picado">1 taza of the ingredient noted in the original recipe.</li>
-          <li data-i18n="The listed amount of the ingredient noted in the original recipe." data-i18n-es="Sal y pimienta al gusto">The listed amount of the ingredient noted in the original recipe.</li>
-        </ul>
-      </section>
-      <section class="card">
-        <div class="section-title" data-i18n="Instructions" data-i18n-es="Instrucciones">Instructions</div>
-        <ol>
-          <li data-i18n="Follow this step in order, keeping the same temperature and timing from the original recipe." data-i18n-es="Dora la carne en una olla con un poco de aceite hasta que tome buen color.">Follow this step in order, keeping the same temperature and timing from the original recipe.</li>
-          <li data-i18n="Follow this step in order, keeping the same temperature and timing from the original recipe." data-i18n-es="Agrega cebolla, ajo y curry, y cocina por 3 minutos para levantar aroma.">Follow this step in order, keeping the same temperature and timing from the original recipe.</li>
-          <li data-i18n="Follow this step in order, keeping the same temperature and timing from the original recipe." data-i18n-es="Incorpora lentejas y caldo, baja a fuego medio y cocina hasta que las lentejas esten tiernas.">Follow this step in order, keeping the same temperature and timing from the original recipe.</li>
-          <li data-i18n="Serve warm and pair with your preferred garnish or side." data-i18n-es="Agrega el kale al final, rectifica sal y pimienta, y deja reposar 5 minutos antes de servir.">Serve warm and pair with your preferred garnish or side.</li>
-        </ol>
-      </section>
-    </div>
-    <div class="footer" data-i18n="Use the language switcher to read this recipe in English or Spanish." data-i18n-es="Usa el selector de idioma para leer esta receta en ingles o espanol.">Use the language switcher to read this recipe in English or Spanish.</div>
-  </article>
-</body>
-</html>
+
+      <div class="footer" data-i18n="A rich, mobile-friendly recipe designed for a balanced, high-protein meal with bold curry flavor and easy kitchen execution." data-i18n-es="Una receta rica, pensada para móvil y diseñada para una comida equilibrada, alta en proteínas, con un sabor intenso a curry y fácil de preparar.">A rich, mobile-friendly recipe designed for a balanced, high-protein meal with bold curry flavor and easy kitchen execution.</div>
+    </article>
+  </body>
+  </html>

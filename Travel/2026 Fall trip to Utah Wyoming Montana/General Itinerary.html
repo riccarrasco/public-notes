@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="2026 fall itinerary through Utah, Wyoming, and Montana.">
+  <title>General Itinerary</title>
+  <style>
+    :root {
+      --accent: #0f6cbd;
+      --accent-light: #e8f3ff;
+      --ink: #242424;
+      --muted: #616161;
+      --line: #e0e0e0;
+      --canvas: #f5f5f5;
+      --surface: rgba(255, 255, 255, 0.88);
+      --success: #107c10;
+      --warning: #a15c00;
+      --danger: #c42b1c;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 6px 18px rgba(0, 0, 0, 0.06);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background-color: var(--canvas);
+      background-image: linear-gradient(rgba(15, 108, 189, 0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(15, 108, 189, 0.045) 1px, transparent 1px);
+      background-size: 32px 32px;
+      font-family: "Segoe UI Variable", "Segoe UI", sans-serif;
+      font-size: 15px;
+      line-height: 1.45;
+    }
+
+    .shell { max-width: 1480px; margin: 0 auto; padding: 28px 28px 48px; }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .app-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 5px var(--accent-light); }
+
+    .hero {
+      border: 1px solid rgba(224, 224, 224, 0.8);
+      border-radius: 8px;
+      background: var(--surface);
+      backdrop-filter: blur(16px);
+      box-shadow: var(--shadow);
+      padding: 34px;
+    }
+
+    .eyebrow { margin: 0 0 7px; color: var(--accent); font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
+    h1 { margin: 0; font-size: 34px; line-height: 1.15; font-weight: 650; letter-spacing: 0; }
+    .intro { max-width: 790px; margin: 14px 0 0; color: var(--muted); font-size: 16px; }
+
+    .trip-facts {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      margin-top: 28px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      overflow: hidden;
+      background: var(--line);
+    }
+
+    .fact { min-height: 92px; padding: 16px 18px; background: rgba(255, 255, 255, 0.92); }
+    .fact-label { display: block; color: var(--muted); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; }
+    .fact-value { display: block; margin-top: 6px; font-weight: 600; }
+
+    .route-band {
+      margin-top: 20px;
+      padding: 15px 18px;
+      border-left: 3px solid var(--accent);
+      background: var(--accent-light);
+      color: #0b416c;
+      font-weight: 600;
+    }
+
+    .notice {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      margin-top: 20px;
+      padding: 14px 16px;
+      border: 1px solid #f2d3a4;
+      border-radius: 6px;
+      background: #fff9f0;
+      color: #6e4200;
+    }
+
+    .notice-mark { color: var(--warning); font-weight: 700; }
+
+    .section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; margin: 36px 0 14px; }
+    h2 { margin: 0; font-size: 22px; line-height: 1.2; font-weight: 600; }
+    .section-note { color: var(--muted); font-size: 13px; }
+
+    .table-shell {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      background: var(--surface);
+      backdrop-filter: blur(10px);
+    }
+
+    table { width: 100%; min-width: 1210px; border-collapse: collapse; }
+    thead th {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      padding: 13px 14px;
+      color: #0c3d65;
+      background: #e8f3ff;
+      border-bottom: 1px solid #b7d7f2;
+      text-align: left;
+      font-size: 12px;
+      font-weight: 650;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    tbody td { padding: 16px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    tbody tr:last-child td { border-bottom: 0; }
+    tbody tr:hover { background: rgba(232, 243, 255, 0.5); }
+    .date { width: 110px; color: #0b416c; font-weight: 650; white-space: nowrap; }
+    .plan { width: 280px; font-weight: 600; }
+    .sleep { width: 200px; }
+    .weather { width: 170px; }
+    .outlook { width: 170px; }
+    .wear { width: 260px; }
+    .risk-low { color: var(--success); font-weight: 600; }
+    .risk-watch { color: var(--warning); font-weight: 600; }
+    .risk-high { color: var(--danger); font-weight: 600; }
+
+    footer { margin-top: 20px; color: var(--muted); font-size: 12px; }
+
+    @media (max-width: 760px) {
+      .shell { padding: 16px 16px 32px; }
+      .hero { padding: 24px 20px; }
+      h1 { font-size: 28px; }
+      .trip-facts { grid-template-columns: 1fr; }
+      .fact { min-height: auto; }
+      .section-head { align-items: flex-start; flex-direction: column; gap: 5px; }
+      .section-note { font-size: 0; }
+      .section-note::after { color: var(--muted); content: "Each day is shown as a card."; font-size: 13px; }
+
+      .table-shell { overflow: visible; border: 0; border-radius: 0; box-shadow: none; background: transparent; backdrop-filter: none; }
+      table { min-width: 0; display: block; }
+      thead { display: none; }
+      tbody { display: grid; gap: 12px; }
+      tbody tr { display: grid; gap: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); box-shadow: var(--shadow); }
+      tbody td { display: block; width: auto !important; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+      tbody td:last-child { border-bottom: 0; }
+      tbody td::before { display: block; margin-bottom: 4px; color: var(--muted); content: ""; font-size: 11px; font-weight: 650; letter-spacing: 0.03em; text-transform: uppercase; }
+      tbody td:nth-child(1)::before { content: "Date"; }
+      tbody td:nth-child(2)::before { content: "Plan"; }
+      tbody td:nth-child(3)::before { content: "Sleep"; }
+      tbody td:nth-child(4)::before { content: "Weather"; }
+      tbody td:nth-child(5)::before { content: "Outlook"; }
+      tbody td:nth-child(6)::before { content: "Wear"; }
+      .date { white-space: normal; }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <div class="topbar"><span class="app-dot" aria-hidden="true"></span><span>Travel workspace</span><span>/</span><span>2026 fall trip</span></div>
+
+    <section class="hero" aria-labelledby="page-title">
+      <p class="eyebrow">General itinerary</p>
+      <h1 id="page-title">General Itinerary</h1>
+      <p class="intro">A high-level plan for route, overnight base, weather posture, and clothing. Detailed activity timing, bookings, and MTB routes live in the supporting trip plans.</p>
+
+      <div class="trip-facts" aria-label="Trip summary">
+        <div class="fact"><span class="fact-label">Dates</span><span class="fact-value">Fri, Sep 25 - Tue, Oct 6, 2026</span></div>
+        <div class="fact"><span class="fact-label">Start / finish</span><span class="fact-value">Charlotte -> Salt Lake City / Bozeman -> Charlotte</span></div>
+        <div class="fact"><span class="fact-label">Trip length</span><span class="fact-value">12 days, 11 nights</span></div>
+      </div>
+
+      <div class="route-band">Salt Lake City -> Park City -> Lehi -> Alpine -> Grand Teton -> Gardiner / Yellowstone -> Bozeman -> Charlotte</div>
+
+      <div class="notice" role="note">
+        <span class="notice-mark" aria-hidden="true">!</span>
+        <span>Weather notes reflect the planning forecast discussed on September 20. Recheck forecast, road conditions, trail conditions, and closures 48 hours before each mountain, park, or Beartooth segment.</span>
+      </div>
+    </section>
+
+    <div class="section-head">
+      <h2>Daily itinerary</h2>
+      <span class="section-note">Scroll horizontally to review all planning details.</span>
+    </div>
+
+    <div class="table-shell" role="region" aria-label="Daily itinerary table" tabindex="0">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Plan</th>
+            <th scope="col">Sleep that night</th>
+            <th scope="col">Expected weather</th>
+            <th scope="col">Rain / snow outlook</th>
+            <th scope="col">What to wear</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="date">Fri, Sep 25</td>
+            <td class="plan">Fly CLT -> SLC. Arrive around 11 PM, pick up rental car, and drive to Fort Union.</td>
+            <td class="sleep">MainStay Suites Salt Lake City Fort Union</td>
+            <td class="weather">Mild evening, roughly 50s-60s F.</td>
+            <td class="outlook"><span class="risk-low">Low concern</span> for the short airport-to-hotel drive.</td>
+            <td class="wear">Travel clothes plus a light jacket.</td>
+          </tr>
+          <tr>
+            <td class="date">Sat, Sep 26</td>
+            <td class="plan">Big Cottonwood Canyon -> Guardsman Pass -> Bloods Lake -> Bonanza Flat -> Empire Pass -> Park City. Scenic chairlift, Main Street, Riverhorse dinner.</td>
+            <td class="sleep">Pioche Village Park City</td>
+            <td class="weather">Park City about 72/48 F. Guardsman Pass and Bloods Lake likely 40s-50s F.</td>
+            <td class="outlook"><span class="risk-low">Low current rain risk</span>, but mountain showers remain possible.</td>
+            <td class="wear">T-shirt, light long sleeve, hiking pants or shorts, hiking shoes. Carry fleece or light puffy, rain shell, beanie, and thin gloves.</td>
+          </tr>
+          <tr>
+            <td class="date">Sun, Sep 27</td>
+            <td class="plan">Rock Cliff Nature Area wildlife viewing -> Jordanelle paddleboard/kayak -> Lehi.</td>
+            <td class="sleep">SpringHill Suites Lehi at Thanksgiving Point</td>
+            <td class="weather">Park City about 69/45 F; Jordanelle comfortable in the 60s F.</td>
+            <td class="outlook"><span class="risk-low">Low current rain risk</span>, with a possible afternoon shower.</td>
+            <td class="wear">T-shirt and shorts or hiking pants, plus a light layer and rain shell. Bring a dry change of clothes and insulating layer for water time.</td>
+          </tr>
+          <tr>
+            <td class="date">Mon, Sep 28</td>
+            <td class="plan">Mary works. MTB day 1 in the Wasatch/Park City area; choose the route from current trail conditions.</td>
+            <td class="sleep">SpringHill Suites Lehi at Thanksgiving Point</td>
+            <td class="weather">Lehi/SLC valley about 85 F; mountain trails roughly 60s-70s F.</td>
+            <td class="outlook"><span class="risk-low">Low current rain risk.</span></td>
+            <td class="wear">MTB shorts and jersey, light long sleeve or arm sleeves, wind shell, gloves, sunglasses, hydration, and electrolytes.</td>
+          </tr>
+          <tr>
+            <td class="date">Tue, Sep 29</td>
+            <td class="plan">Mary works. Long MTB day, with Wasatch Crest / Mill D / Big Cottonwood as the planning area.</td>
+            <td class="sleep">SpringHill Suites Lehi at Thanksgiving Point</td>
+            <td class="weather">Valley about 83 F; mountain terrain roughly 50s-60s F.</td>
+            <td class="outlook"><span class="risk-watch">Small later-day rain risk.</span></td>
+            <td class="wear">MTB shorts and jersey, arm sleeves or light long sleeve, gloves, wind shell, and packable rain shell. Take an insulating layer and extra food for the long ride.</td>
+          </tr>
+          <tr>
+            <td class="date">Wed, Sep 30</td>
+            <td class="plan">Mary works. Short morning MTB ride, return rental bike, then evening drive from Lehi to Alpine/Star Valley after work.</td>
+            <td class="sleep">Salt River Lodge, Alpine, WY</td>
+            <td class="weather">Valley about 81 F; mountain trails around the 60s F. Alpine evening will be cooler.</td>
+            <td class="outlook"><span class="risk-watch">Small isolated late rain/storm risk.</span></td>
+            <td class="wear">Same MTB layers as Tuesday. Keep the rain shell accessible, then change to warm travel layers for the evening drive.</td>
+          </tr>
+          <tr>
+            <td class="date">Thu, Oct 1</td>
+            <td class="plan">Alpine -> Snake River Canyon -> Astoria Hot Springs -> Grand Teton scenic stops: Mormon Row, Antelope Flats, Snake River Overlook, Schwabacher Landing, Oxbow Bend, Jackson Lake.</td>
+            <td class="sleep">Gravity Haus Jackson Hole, Teton Village</td>
+            <td class="weather">Early-October mountain conditions, likely daytime 45s-55s F with cold morning/evening.</td>
+            <td class="outlook"><span class="risk-watch">Too early for a precise forecast.</span> Rain or a light early-season snow event is possible.</td>
+            <td class="wear">Hiking pants, moisture-wicking long sleeve, fleece, light puffy, waterproof shell, warm socks, waterproof hiking footwear, beanie, and gloves. Pack swimsuit and sandals for Astoria.</td>
+          </tr>
+          <tr>
+            <td class="date">Fri, Oct 2</td>
+            <td class="plan">Full Grand Teton day: sunrise viewpoint, Jenny/String/Leigh Lake area, optional low-elevation hike, wildlife, and scenic drives.</td>
+            <td class="sleep">Gravity Haus Jackson Hole, Teton Village</td>
+            <td class="weather">Best case 55-65 F daytime and 35-45 F at sunset; typical 45-55 F daytime and 25-35 F at sunrise/evening.</td>
+            <td class="outlook"><span class="risk-watch">Snow/ice is possible at elevation</span>; lower trails may be dry.</td>
+            <td class="wear">For sunrise: base layer, fleece, puffy, shell, warm pants, beanie, gloves, and warm socks. For hiking: layers that can come off, waterproof boots, and microspikes in the car.</td>
+          </tr>
+          <tr>
+            <td class="date">Sat, Oct 3</td>
+            <td class="plan">Grand Teton -> Yellowstone via South Entrance. Prioritize West Thumb, Yellowstone Lake, Hayden Valley, Old Faithful, Upper Geyser Basin, and Grand Prismatic. Continue to Gardiner.</td>
+            <td class="sleep">Corral Villas Yellowstone, Gardiner</td>
+            <td class="weather">Yellowstone low 50s F by day, potentially mid-20s F overnight.</td>
+            <td class="outlook"><span class="risk-watch">Snow is possible</span> at elevation and on colder road segments; no reliable precise forecast yet.</td>
+            <td class="wear">Base layer, fleece, puffy, waterproof shell, hiking pants, waterproof footwear, beanie, and gloves. Keep food, water, and extra warmth in the car.</td>
+          </tr>
+          <tr>
+            <td class="date">Sun, Oct 4</td>
+            <td class="plan">Mammoth Hot Springs -> Tower Junction -> Lamar Valley -> Cooke City/Silver Gate -> Gardiner. Yellowstone Hot Springs in the evening.</td>
+            <td class="sleep">Corral Villas Yellowstone, Gardiner</td>
+            <td class="weather">Upper 40s F by day and mid-20s F overnight, colder in Lamar Valley early and late.</td>
+            <td class="outlook"><span class="risk-watch">Increasing early-season snow/ice potential</span>, especially outside Gardiner and at elevation.</td>
+            <td class="wear">Warmest Yellowstone layers: base layer, fleece, puffy, waterproof shell, warm pants, beanie, gloves, and waterproof boots. Pack swimsuit for hot springs.</td>
+          </tr>
+          <tr>
+            <td class="date">Mon, Oct 5</td>
+            <td class="plan">Weather decision: Beartooth Highway route if open, otherwise Gardiner -> Mammoth -> Livingston -> Paradise Valley -> Bozeman.</td>
+            <td class="sleep">MountainView Lodge &amp; Suites, Bozeman</td>
+            <td class="weather">Low 40s F planning signal in Yellowstone. Beartooth Pass can be winter-like near 11,000 ft.</td>
+            <td class="outlook"><span class="risk-high">Major weather and road-status wildcard.</span> Snow, ice, wind, or closure are all realistic on Beartooth.</td>
+            <td class="wear">Winter-capable layers: base layer, fleece, puffy, waterproof shell, beanie, gloves, warm socks, and waterproof footwear. Do not attempt Beartooth without confirmed open roads and suitable conditions.</td>
+          </tr>
+          <tr>
+            <td class="date">Tue, Oct 6</td>
+            <td class="plan">Easy Bozeman morning. Fly BZN -> CLT at 11:38 AM.</td>
+            <td class="sleep">Home</td>
+            <td class="weather">Cool Bozeman morning.</td>
+            <td class="outlook">No mountain travel planned.</td>
+            <td class="wear">Travel layers and a light jacket.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <footer>Source: General Itinerary.md | Published as a standalone trip reference.</footer>
+  </main>
+</body>
+</html>
